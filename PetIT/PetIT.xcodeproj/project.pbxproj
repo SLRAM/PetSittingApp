@@ -118,7 +118,6 @@
 		97CC5106224BD9BA00ABBEBA /* PetIT */ = {
 			isa = PBXGroup;
 			children = (
-				97CC511F224BDCB600ABBEBA /* Utilities */,
 				97CC511E224BDCAD00ABBEBA /* Extensions */,
 				97CC511D224BDC9900ABBEBA /* Firebase Helpers */,
 				97CC511A224BDC6A00ABBEBA /* Models */,
@@ -189,13 +188,6 @@
 				97CC512F224BDF6900ABBEBA /* Date Extensions */,
 			);
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		97CC511F224BDCB600ABBEBA /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Utilities;
 			sourceTree = "<group>";
 		};
 		97CC5120224BDCCF00ABBEBA /* Account Login Controllers */ = {
