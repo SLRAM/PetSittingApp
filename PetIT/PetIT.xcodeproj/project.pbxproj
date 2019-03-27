@@ -9,7 +9,12 @@
 /* Begin PBXBuildFile section */
 		535A73FF62FBE4731A98CD32 /* Pods_PetIT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12522489E72FFE4E0F3A40D7 /* Pods_PetIT.framework */; };
 		97BC15DA224BFDD6002AE952 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 97BC15D9224BFDD6002AE952 /* GoogleService-Info.plist */; };
-		97BC15DC224BFF7B002AE952 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BC15DB224BFF7B002AE952 /* Pet.swift */; };
+		97BC15DE224C058D002AE952 /* DBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BC15DD224C058D002AE952 /* DBService.swift */; };
+		97BC15E0224C05B9002AE952 /* DBService+User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BC15DF224C05B9002AE952 /* DBService+User.swift */; };
+		97BC15E2224C07D7002AE952 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BC15E1224C07D7002AE952 /* UserModel.swift */; };
+		97BC15E6224C0914002AE952 /* DBService+JobPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BC15E5224C0914002AE952 /* DBService+JobPost.swift */; };
+		97BC15E8224C0926002AE952 /* JobPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BC15E7224C0926002AE952 /* JobPost.swift */; };
+		97BC15EA224C142D002AE952 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BC15E9224C142D002AE952 /* AuthService.swift */; };
 		97CC5108224BD9BA00ABBEBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CC5107224BD9BA00ABBEBA /* AppDelegate.swift */; };
 		97CC510D224BD9BA00ABBEBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97CC510B224BD9BA00ABBEBA /* Main.storyboard */; };
 		97CC510F224BD9BE00ABBEBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97CC510E224BD9BE00ABBEBA /* Assets.xcassets */; };
@@ -35,7 +40,12 @@
 		3538685A5C69D9751B93A884 /* Pods-PetIT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetIT.release.xcconfig"; path = "Target Support Files/Pods-PetIT/Pods-PetIT.release.xcconfig"; sourceTree = "<group>"; };
 		91F7D1F91D5D5338A9CDCB33 /* Pods-PetIT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetIT.debug.xcconfig"; path = "Target Support Files/Pods-PetIT/Pods-PetIT.debug.xcconfig"; sourceTree = "<group>"; };
 		97BC15D9224BFDD6002AE952 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		97BC15DB224BFF7B002AE952 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
+		97BC15DD224C058D002AE952 /* DBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBService.swift; sourceTree = "<group>"; };
+		97BC15DF224C05B9002AE952 /* DBService+User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DBService+User.swift"; sourceTree = "<group>"; };
+		97BC15E1224C07D7002AE952 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		97BC15E5224C0914002AE952 /* DBService+JobPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DBService+JobPost.swift"; sourceTree = "<group>"; };
+		97BC15E7224C0926002AE952 /* JobPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobPost.swift; sourceTree = "<group>"; };
+		97BC15E9224C142D002AE952 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		97CC5104224BD9BA00ABBEBA /* PetIT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetIT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97CC5107224BD9BA00ABBEBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97CC510C224BD9BA00ABBEBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -138,7 +148,8 @@
 		97CC511A224BDC6A00ABBEBA /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				97BC15DB224BFF7B002AE952 /* Pet.swift */,
+				97BC15E1224C07D7002AE952 /* UserModel.swift */,
+				97BC15E7224C0926002AE952 /* JobPost.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -163,6 +174,10 @@
 			isa = PBXGroup;
 			children = (
 				97CC5139224BE1A100ABBEBA /* StorageService.swift */,
+				97BC15DD224C058D002AE952 /* DBService.swift */,
+				97BC15DF224C05B9002AE952 /* DBService+User.swift */,
+				97BC15E9224C142D002AE952 /* AuthService.swift */,
+				97BC15E5224C0914002AE952 /* DBService+JobPost.swift */,
 			);
 			path = "Firebase Helpers";
 			sourceTree = "<group>";
@@ -369,21 +384,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97BC15DC224BFF7B002AE952 /* Pet.swift in Sources */,
+				97BC15E8224C0926002AE952 /* JobPost.swift in Sources */,
+				97BC15DE224C058D002AE952 /* DBService.swift in Sources */,
 				97CC513E224BE3D400ABBEBA /* EditProfileViewController.swift in Sources */,
 				97CC5128224BDE1A00ABBEBA /* CreateAccountViewController.swift in Sources */,
 				97CC512C224BDE7400ABBEBA /* MapViewController.swift in Sources */,
 				97CC5132224BDFC200ABBEBA /* Date+Extensions.swift in Sources */,
 				97CC5140224BE3F100ABBEBA /* PostingDetailViewController.swift in Sources */,
+				97BC15EA224C142D002AE952 /* AuthService.swift in Sources */,
 				97CC5136224BE06F00ABBEBA /* UIViewController+Navigation.swift in Sources */,
 				97CC5126224BDDC700ABBEBA /* ProfileViewController.swift in Sources */,
 				97CC5138224BE10E00ABBEBA /* UIViewController+Alert.swift in Sources */,
 				97CC5134224BDFE600ABBEBA /* String+Date.swift in Sources */,
 				97CC5124224BDD8300ABBEBA /* TabBarViewController.swift in Sources */,
+				97BC15E6224C0914002AE952 /* DBService+JobPost.swift in Sources */,
 				97CC513C224BE20100ABBEBA /* MapPostDetailViewController.swift in Sources */,
 				97CC512A224BDE2C00ABBEBA /* LoginViewController.swift in Sources */,
 				97CC513A224BE1A100ABBEBA /* StorageService.swift in Sources */,
 				97CC5108224BD9BA00ABBEBA /* AppDelegate.swift in Sources */,
+				97BC15E2224C07D7002AE952 /* UserModel.swift in Sources */,
+				97BC15E0224C05B9002AE952 /* DBService+User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
