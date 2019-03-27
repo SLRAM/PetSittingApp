@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  tabBarViewController.swift
 //  PetIT
 //
 //  Created by Stephanie Ramirez on 3/27/19.
@@ -8,13 +8,10 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class TabBarViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
     }
-
-
 }
-
