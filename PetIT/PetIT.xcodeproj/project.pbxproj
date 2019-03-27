@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		535A73FF62FBE4731A98CD32 /* Pods_PetIT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12522489E72FFE4E0F3A40D7 /* Pods_PetIT.framework */; };
 		97BC15DA224BFDD6002AE952 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 97BC15D9224BFDD6002AE952 /* GoogleService-Info.plist */; };
+		97BC15DC224BFF7B002AE952 /* Pet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BC15DB224BFF7B002AE952 /* Pet.swift */; };
 		97CC5108224BD9BA00ABBEBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CC5107224BD9BA00ABBEBA /* AppDelegate.swift */; };
 		97CC510D224BD9BA00ABBEBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97CC510B224BD9BA00ABBEBA /* Main.storyboard */; };
 		97CC510F224BD9BE00ABBEBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97CC510E224BD9BE00ABBEBA /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 		3538685A5C69D9751B93A884 /* Pods-PetIT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetIT.release.xcconfig"; path = "Target Support Files/Pods-PetIT/Pods-PetIT.release.xcconfig"; sourceTree = "<group>"; };
 		91F7D1F91D5D5338A9CDCB33 /* Pods-PetIT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetIT.debug.xcconfig"; path = "Target Support Files/Pods-PetIT/Pods-PetIT.debug.xcconfig"; sourceTree = "<group>"; };
 		97BC15D9224BFDD6002AE952 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		97BC15DB224BFF7B002AE952 /* Pet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet.swift; sourceTree = "<group>"; };
 		97CC5104224BD9BA00ABBEBA /* PetIT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetIT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97CC5107224BD9BA00ABBEBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97CC510C224BD9BA00ABBEBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 		97CC511A224BDC6A00ABBEBA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				97BC15DB224BFF7B002AE952 /* Pet.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97BC15DC224BFF7B002AE952 /* Pet.swift in Sources */,
 				97CC513E224BE3D400ABBEBA /* EditProfileViewController.swift in Sources */,
 				97CC5128224BDE1A00ABBEBA /* CreateAccountViewController.swift in Sources */,
 				97CC512C224BDE7400ABBEBA /* MapViewController.swift in Sources */,
