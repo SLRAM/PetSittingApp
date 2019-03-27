@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		535A73FF62FBE4731A98CD32 /* Pods_PetIT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12522489E72FFE4E0F3A40D7 /* Pods_PetIT.framework */; };
 		97CC5108224BD9BA00ABBEBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CC5107224BD9BA00ABBEBA /* AppDelegate.swift */; };
 		97CC510D224BD9BA00ABBEBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97CC510B224BD9BA00ABBEBA /* Main.storyboard */; };
 		97CC510F224BD9BE00ABBEBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97CC510E224BD9BE00ABBEBA /* Assets.xcassets */; };
@@ -28,6 +29,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		12522489E72FFE4E0F3A40D7 /* Pods_PetIT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetIT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3538685A5C69D9751B93A884 /* Pods-PetIT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetIT.release.xcconfig"; path = "Target Support Files/Pods-PetIT/Pods-PetIT.release.xcconfig"; sourceTree = "<group>"; };
+		91F7D1F91D5D5338A9CDCB33 /* Pods-PetIT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PetIT.debug.xcconfig"; path = "Target Support Files/Pods-PetIT/Pods-PetIT.debug.xcconfig"; sourceTree = "<group>"; };
 		97CC5104224BD9BA00ABBEBA /* PetIT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetIT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97CC5107224BD9BA00ABBEBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97CC510C224BD9BA00ABBEBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -55,17 +59,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				535A73FF62FBE4731A98CD32 /* Pods_PetIT.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13A89A6F2D0458DD43550891 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				91F7D1F91D5D5338A9CDCB33 /* Pods-PetIT.debug.xcconfig */,
+				3538685A5C69D9751B93A884 /* Pods-PetIT.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		642A179A53346796255DB68B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				12522489E72FFE4E0F3A40D7 /* Pods_PetIT.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		97CC50FB224BD9BA00ABBEBA = {
 			isa = PBXGroup;
 			children = (
 				97CC5106224BD9BA00ABBEBA /* PetIT */,
 				97CC5105224BD9BA00ABBEBA /* Products */,
+				13A89A6F2D0458DD43550891 /* Pods */,
+				642A179A53346796255DB68B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -206,9 +231,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 97CC5116224BD9BE00ABBEBA /* Build configuration list for PBXNativeTarget "PetIT" */;
 			buildPhases = (
+				C16E3A51B1EFFBBF661AFFC3 /* [CP] Check Pods Manifest.lock */,
 				97CC5100224BD9BA00ABBEBA /* Sources */,
 				97CC5101224BD9BA00ABBEBA /* Frameworks */,
 				97CC5102224BD9BA00ABBEBA /* Resources */,
+				23C8D6C1273D196864EE8AAC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -265,6 +292,71 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		23C8D6C1273D196864EE8AAC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PetIT/Pods-PetIT-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/Toucan/Toucan.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toucan.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PetIT/Pods-PetIT-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C16E3A51B1EFFBBF661AFFC3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PetIT-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		97CC5100224BD9BA00ABBEBA /* Sources */ = {
@@ -428,6 +520,7 @@
 		};
 		97CC5117224BD9BE00ABBEBA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91F7D1F91D5D5338A9CDCB33 /* Pods-PetIT.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -446,6 +539,7 @@
 		};
 		97CC5118224BD9BE00ABBEBA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3538685A5C69D9751B93A884 /* Pods-PetIT.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
