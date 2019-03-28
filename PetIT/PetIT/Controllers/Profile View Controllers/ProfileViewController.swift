@@ -8,7 +8,6 @@
 
 import UIKit
 import Firebase
-import Toucan
 
 class ProfileViewController: UIViewController {
     
