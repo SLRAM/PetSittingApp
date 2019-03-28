@@ -18,6 +18,7 @@ class JobListViewController: UIViewController {
     @IBOutlet weak var jobListTableView: UITableView!
     
     let locationManager = CLLocationManager()
+    var userLocation = CLLocationCoordinate2D()
 
     
     private var jobPosts = [JobPost]() {
@@ -129,14 +130,13 @@ extension JobListViewController: UITableViewDataSource {
             fatalError("PostCell not found")
         }
         let jobPost = jobPosts[indexPath.row]
+        let coordinate0 = CLLocation(latitude: userLocation.latitude, longitude: userLocation.longitude)
+        let coordinate1 = CLLocation(latitude: jobPost.lat, longitude: jobPost.long)
+        let distanceInMiles = (coordinate0.distance(from: coordinate1))/1609.344
+        let roundedDistance = String(format: "%.2f", distanceInMiles)
         cell.selectionStyle = .none
         cell.jobDescription.text = jobPost.jobDescription
-//        cell.zipcodeLabel.text = String(jobPost.zipcode)
-//        cell.blogId = jobPost.documentId
-//        cell.blogDescription.text = jobPost.blogDescription
-//        cell.BloggerImage.kf.indicatorType = .activity
-//        cell.blogImage.kf.indicatorType = .activity
-//        cell.blogImage.kf.setImage(with: URL(string: jobPost.imageURL), placeholder: #imageLiteral(resourceName: "placeholder-image.png"))
+        cell.zipcodeLabel.text = "Distance: \(roundedDistance) miles"
         fetchPostCreator(userId: jobPost.ownerId, cell: cell, jobPost: jobPost)
         return cell
     }
@@ -189,6 +189,7 @@ extension JobListViewController: CLLocationManagerDelegate {
         print("The user is in lat: \(currentLocation.coordinate.latitude) and long:\(currentLocation.coordinate.longitude)")
         
         let myCurrentRegion = MKCoordinateRegion(center: currentLocation.coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
+        userLocation = currentLocation.coordinate
         
 //        myMapView.setRegion(myCurrentRegion, animated: true)
     }
