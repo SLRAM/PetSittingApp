@@ -16,7 +16,7 @@ class ProfileViewController: UIViewController {
     var userLocation = CLLocationCoordinate2D()
     
     private lazy var profileHeaderView: ProfileHeaderView = {
-        let headerView = ProfileHeaderView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 450))
+        let headerView = ProfileHeaderView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 200))
         return headerView
     }()
     
