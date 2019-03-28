@@ -9,10 +9,6 @@
 /* Begin PBXBuildFile section */
 		2E0734C8224C25A300C613B4 /* IBADesignableViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0734C7224C25A300C613B4 /* IBADesignableViews.swift */; };
 		2E0734CA224C261500C613B4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0734C9224C261500C613B4 /* Constants.swift */; };
-		2E0734D1224C299300C613B4 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0734D0224C299300C613B4 /* ProfileHeaderView.swift */; };
-		2E0734D5224C2A0A00C613B4 /* ProfileHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E0734D4224C2A0A00C613B4 /* ProfileHeaderView.xib */; };
-		2E0734D7224C2AED00C613B4 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0734D6224C2AED00C613B4 /* PostCell.swift */; };
-		2E0734D9224C2B0600C613B4 /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E0734D8224C2B0600C613B4 /* PostCell.xib */; };
 		2E0734DB224C34BD00C613B4 /* EditOwnerProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0734DA224C34BD00C613B4 /* EditOwnerProfileTableViewController.swift */; };
 		2E0734DD224C40E100C613B4 /* AddJobPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0734DC224C40E100C613B4 /* AddJobPostViewController.swift */; };
 		2E0734DF224C4E9C00C613B4 /* JobListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0734DE224C4E9C00C613B4 /* JobListViewController.swift */; };
@@ -25,6 +21,10 @@
 		97BC15E8224C0926002AE952 /* JobPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BC15E7224C0926002AE952 /* JobPost.swift */; };
 		97BC15EA224C142D002AE952 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BC15E9224C142D002AE952 /* AuthService.swift */; };
 		97BC15EC224D1C46002AE952 /* AddLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BC15EB224D1C46002AE952 /* AddLocationViewController.swift */; };
+		97BC15F3224D26D4002AE952 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BC15EF224D26D4002AE952 /* ProfileHeaderView.swift */; };
+		97BC15F4224D26D4002AE952 /* ProfileHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97BC15F0224D26D4002AE952 /* ProfileHeaderView.xib */; };
+		97BC15F5224D26D4002AE952 /* PostCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 97BC15F1224D26D4002AE952 /* PostCell.xib */; };
+		97BC15F6224D26D4002AE952 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97BC15F2224D26D4002AE952 /* PostCell.swift */; };
 		97CC5108224BD9BA00ABBEBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CC5107224BD9BA00ABBEBA /* AppDelegate.swift */; };
 		97CC510D224BD9BA00ABBEBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97CC510B224BD9BA00ABBEBA /* Main.storyboard */; };
 		97CC510F224BD9BE00ABBEBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97CC510E224BD9BE00ABBEBA /* Assets.xcassets */; };
@@ -47,10 +47,6 @@
 		12522489E72FFE4E0F3A40D7 /* Pods_PetIT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PetIT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E0734C7224C25A300C613B4 /* IBADesignableViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBADesignableViews.swift; sourceTree = "<group>"; };
 		2E0734C9224C261500C613B4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		2E0734D0224C299300C613B4 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ProfileHeaderView.swift; path = PetIT/Controllers/ProfileHeaderView.swift; sourceTree = SOURCE_ROOT; };
-		2E0734D4224C2A0A00C613B4 /* ProfileHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ProfileHeaderView.xib; path = "PetIT/Controllers/Profile View Controllers/ProfileHeaderView.xib"; sourceTree = SOURCE_ROOT; };
-		2E0734D6224C2AED00C613B4 /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PostCell.swift; path = "PetIT/Controllers/Profile View Controllers/PostCell.swift"; sourceTree = SOURCE_ROOT; };
-		2E0734D8224C2B0600C613B4 /* PostCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PostCell.xib; path = "PetIT/Controllers/Profile View Controllers/PostCell.xib"; sourceTree = SOURCE_ROOT; };
 		2E0734DA224C34BD00C613B4 /* EditOwnerProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditOwnerProfileTableViewController.swift; sourceTree = "<group>"; };
 		2E0734DC224C40E100C613B4 /* AddJobPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddJobPostViewController.swift; sourceTree = "<group>"; };
 		2E0734DE224C4E9C00C613B4 /* JobListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobListViewController.swift; sourceTree = "<group>"; };
@@ -64,6 +60,10 @@
 		97BC15E7224C0926002AE952 /* JobPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobPost.swift; sourceTree = "<group>"; };
 		97BC15E9224C142D002AE952 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		97BC15EB224D1C46002AE952 /* AddLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationViewController.swift; sourceTree = "<group>"; };
+		97BC15EF224D26D4002AE952 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
+		97BC15F0224D26D4002AE952 /* ProfileHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileHeaderView.xib; sourceTree = "<group>"; };
+		97BC15F1224D26D4002AE952 /* PostCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostCell.xib; sourceTree = "<group>"; };
+		97BC15F2224D26D4002AE952 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		97CC5104224BD9BA00ABBEBA /* PetIT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PetIT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97CC5107224BD9BA00ABBEBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		97CC510C224BD9BA00ABBEBA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -130,6 +130,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		97BC15EE224D26D4002AE952 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				97BC15EF224D26D4002AE952 /* ProfileHeaderView.swift */,
+				97BC15F0224D26D4002AE952 /* ProfileHeaderView.xib */,
+				97BC15F1224D26D4002AE952 /* PostCell.xib */,
+				97BC15F2224D26D4002AE952 /* PostCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		97CC50FB224BD9BA00ABBEBA = {
 			isa = PBXGroup;
 			children = (
@@ -151,11 +162,11 @@
 		97CC5106224BD9BA00ABBEBA /* PetIT */ = {
 			isa = PBXGroup;
 			children = (
+				97BC15EE224D26D4002AE952 /* Views */,
 				2E0734C6224C257500C613B4 /* Utilities */,
 				97CC511E224BDCAD00ABBEBA /* Extensions */,
 				97CC511D224BDC9900ABBEBA /* Firebase Helpers */,
 				97CC511A224BDC6A00ABBEBA /* Models */,
-				97CC511C224BDC8C00ABBEBA /* Views */,
 				97CC5119224BDC5800ABBEBA /* Controllers */,
 				97CC511B224BDC8000ABBEBA /* Storyboards */,
 				97CC5107224BD9BA00ABBEBA /* AppDelegate.swift */,
@@ -195,17 +206,6 @@
 				97CC512D224BDF2B00ABBEBA /* LoginView.storyboard */,
 			);
 			path = Storyboards;
-			sourceTree = "<group>";
-		};
-		97CC511C224BDC8C00ABBEBA /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				2E0734D0224C299300C613B4 /* ProfileHeaderView.swift */,
-				2E0734D4224C2A0A00C613B4 /* ProfileHeaderView.xib */,
-				2E0734D6224C2AED00C613B4 /* PostCell.swift */,
-				2E0734D8224C2B0600C613B4 /* PostCell.xib */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		97CC511D224BDC9900ABBEBA /* Firebase Helpers */ = {
@@ -337,9 +337,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				97CC5112224BD9BE00ABBEBA /* LaunchScreen.storyboard in Resources */,
-				2E0734D5224C2A0A00C613B4 /* ProfileHeaderView.xib in Resources */,
+				97BC15F4224D26D4002AE952 /* ProfileHeaderView.xib in Resources */,
 				97CC510F224BD9BE00ABBEBA /* Assets.xcassets in Resources */,
-				2E0734D9224C2B0600C613B4 /* PostCell.xib in Resources */,
+				97BC15F5224D26D4002AE952 /* PostCell.xib in Resources */,
 				97BC15DA224BFDD6002AE952 /* GoogleService-Info.plist in Resources */,
 				97CC510D224BD9BA00ABBEBA /* Main.storyboard in Resources */,
 				97CC512E224BDF2B00ABBEBA /* LoginView.storyboard in Resources */,
@@ -426,14 +426,14 @@
 				97BC15EC224D1C46002AE952 /* AddLocationViewController.swift in Sources */,
 				97CC5128224BDE1A00ABBEBA /* CreateAccountViewController.swift in Sources */,
 				97CC512C224BDE7400ABBEBA /* JobPostMapViewController.swift in Sources */,
-				2E0734D1224C299300C613B4 /* ProfileHeaderView.swift in Sources */,
 				97CC5132224BDFC200ABBEBA /* Date+Extensions.swift in Sources */,
 				97CC5140224BE3F100ABBEBA /* JobPostDetailViewController.swift in Sources */,
 				97BC15EA224C142D002AE952 /* AuthService.swift in Sources */,
 				97CC5136224BE06F00ABBEBA /* UIViewController+Navigation.swift in Sources */,
+				97BC15F3224D26D4002AE952 /* ProfileHeaderView.swift in Sources */,
 				97CC5126224BDDC700ABBEBA /* ProfileViewController.swift in Sources */,
 				2E0734DB224C34BD00C613B4 /* EditOwnerProfileTableViewController.swift in Sources */,
-				2E0734D7224C2AED00C613B4 /* PostCell.swift in Sources */,
+				97BC15F6224D26D4002AE952 /* PostCell.swift in Sources */,
 				97CC5138224BE10E00ABBEBA /* UIViewController+Alert.swift in Sources */,
 				97CC5134224BDFE600ABBEBA /* String+Date.swift in Sources */,
 				97CC5124224BDD8300ABBEBA /* TabBarViewController.swift in Sources */,
