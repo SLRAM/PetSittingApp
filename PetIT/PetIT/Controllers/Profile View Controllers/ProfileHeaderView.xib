@@ -13,6 +13,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileHeaderView" customModule="PetIT" customModuleProvider="target">
             <connections>
                 <outlet property="ProfilebioTextField" destination="9UG-vW-nrd" id="0fV-9S-7wW"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="ihv-Up-bDN"/>
                 <outlet property="fullnameLabel" destination="aVF-Ya-Rqe" id="mEa-OF-g1F"/>
                 <outlet property="profileImage" destination="w57-m3-Q7K" id="MLH-OB-CCG"/>
                 <outlet property="usernameLabel" destination="rXo-3m-KtM" id="A3J-mO-zzx"/>
