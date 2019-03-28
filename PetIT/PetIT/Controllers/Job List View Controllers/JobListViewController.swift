@@ -9,11 +9,16 @@
 import UIKit
 import Kingfisher
 import Firebase
+import CoreLocation
+import MapKit
 
 class JobListViewController: UIViewController {
 
     @IBOutlet weak var jobListSearchBar: UISearchBar!
     @IBOutlet weak var jobListTableView: UITableView!
+    
+    let locationManager = CLLocationManager()
+
     
     private var jobPosts = [JobPost]() {
         didSet {
@@ -43,6 +48,18 @@ class JobListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        locationManager.delegate = self
+        
+        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.startUpdatingLocation()
+//            myMapView.showsUserLocation = true
+        } else {
+            locationManager.requestWhenInUseAuthorization()
+            locationManager.startUpdatingLocation()
+//            myMapView.showsUserLocation = true
+        }
+        
         jobListTableView.dataSource = self
         jobListTableView.delegate = self
         jobListTableView.register(UINib(nibName: "PostCell", bundle: nil), forCellReuseIdentifier: "PostCell")
@@ -155,3 +172,23 @@ extension JobListViewController: AuthServiceSignOutDelegate {
     func didSignOutWithError(_ authservice: AuthService, error: Error) {}
 }
 
+extension JobListViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        //this kicks off whenever authorization is turned on or off
+        print("user changed the authorization")
+//        let currentLocation = myMapView.userLocation
+//        let myCurrentRegion = MKCoordinateRegion(center: currentLocation.coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
+//
+//        myMapView.setRegion(myCurrentRegion, animated: true)
+    }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        //this kicks off whenever the user's location has noticeably changed
+        print("user has changed locations")
+        guard let currentLocation = locations.last else {return}
+        print("The user is in lat: \(currentLocation.coordinate.latitude) and long:\(currentLocation.coordinate.longitude)")
+        
+        let myCurrentRegion = MKCoordinateRegion(center: currentLocation.coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
+        
+//        myMapView.setRegion(myCurrentRegion, animated: true)
+    }
+}
