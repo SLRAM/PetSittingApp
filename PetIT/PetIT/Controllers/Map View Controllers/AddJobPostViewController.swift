@@ -73,8 +73,8 @@ class AddJobPostViewController: UIViewController {
             !postDescription.isEmpty,
             let petDescription = petBio.text,
             !petDescription.isEmpty,
-            let stringWage = wages.text,
-            let jobWage = Double(stringWage),
+            let jobWage = wages.text,
+            !jobWage.isEmpty,
             let jobTimeFrame = timeFrame.text,
             !jobTimeFrame.isEmpty,
             let imageData = selectedImage?.jpegData(compressionQuality: 1.0) else {
