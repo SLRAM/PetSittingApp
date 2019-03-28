@@ -36,7 +36,7 @@ class JobPostDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        updateUserImageAndUsername()
+        updateUserImageAndUsername()
         
     }
     
@@ -50,13 +50,12 @@ class JobPostDetailViewController: UIViewController {
         if let photoURL = self.userModel?.photoURL, !photoURL.isEmpty {
             petOwnerProfileImage.kf.setImage(with: URL(string: photoURL), placeholder: #imageLiteral(resourceName: "create_new"))
         }
-        if let imageURL = userModel?.petPhotoURL {
-            petImage.kf.setImage(with: URL(string: imageURL), placeholder: #imageLiteral(resourceName: "placeholder-image.png"))
-        }
+        petImage.kf.setImage(with: URL(string: jobPost.imageURLString), placeholder: #imageLiteral(resourceName: "placeholder-image.png"))
+        
         jobDescription.text = jobPost.jobDescription
-        petBio.text = userModel?.petBio
+        petBio.text = jobPost.petBio
         jobTimeFrame.text = jobPost.timeFrame
-        jobWages.text = String(jobPost.wage)
+        jobWages.text = jobPost.wage
         fullnameLabel.text = userModel!.firstName
         usernameLable.text = "@" + (userModel!.displayName)
 }
