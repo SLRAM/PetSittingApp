@@ -113,6 +113,7 @@ class JobListViewController: UIViewController {
             let jobPost = jobPosts[indexPath.row]
 //            postDVC.jobPost = jobPost
 //            postDVC.ID = jobPost.ID
+            postDVC.jobPost = jobPost
             
         }
     }

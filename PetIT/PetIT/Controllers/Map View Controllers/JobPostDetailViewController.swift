@@ -21,8 +21,14 @@ class JobPostDetailViewController: UIViewController {
     @IBOutlet weak var jobTimeFrame: UITextField!
     @IBOutlet weak var jobWages: UITextField!
     
-    public var userModel: UserModel!
-    public var jobPosts: JobPost!
+    public var userModel: UserModel? {
+        didSet {
+            DispatchQueue.main.async {
+                 self.updateUI()
+            }
+        }
+    }
+    public var jobPost: JobPost!
     public var displayName: String?
     public var jobDescrip: String?
     
@@ -30,35 +36,38 @@ class JobPostDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateUserImageAndUsername()
+//        updateUserImageAndUsername()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        updateUI()
+        updateUserImageAndUsername()
     }
     
     
     private func updateUI() {
-        petImage.kf.setImage(with: URL(string: userModel.petPhotoURL ?? "No pet image found"))
-        jobDescription.text = jobPosts.jobDescription
-        petBio.text = userModel.petBio
-        jobTimeFrame.text = jobPosts.timeFrame
-        jobWages.text = String(jobPosts.wage)
+        jobDescription.text = jobPost.jobDescription
+        petBio.text = userModel!.petBio
+        jobTimeFrame.text = jobPost.timeFrame
+        jobWages.text = String(jobPost.wage)
 }
     
     private func updateUserImageAndUsername() {
-        DBService.fetchUser(userId: jobPosts.ownerId) { [weak self] (error, user) in
+        DBService.fetchUser(userId: jobPost.ownerId) { [weak self] (error, user) in
             if let error = error {
                 self?.showAlert(title: "Error getting username", message: error.localizedDescription)
             } else if let user = user {
+                self?.userModel = user
                 self?.fullnameLabel.text = user.firstName
                 self?.usernameLable.text = "@" + (user.displayName)
+                if let imageURL = user.petPhotoURL {
+                    self?.petImage.kf.setImage(with: URL(string: imageURL), placeholder: #imageLiteral(resourceName: "placeholder-image.png"))
+                }
+                if let photoURL = self?.userModel?.photoURL, !photoURL.isEmpty {
+                    self?.petOwnerProfileImage.kf.setImage(with: URL(string: photoURL), placeholder: #imageLiteral(resourceName: "create_new"))
+                }
             }
-            guard let photoURL = self?.userModel?.photoURL, !photoURL.isEmpty else {
-                return
-            }
-            self?.petOwnerProfileImage.kf.setImage(with: URL(string: photoURL), placeholder: #imageLiteral(resourceName: "create_new"))
         }
     }
     
