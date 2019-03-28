@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZh-Qh-Qou" customClass="CircularButton" customModule="PetIT" customModuleProvider="target">
-                        <rect key="frame" x="40" y="40" width="80" height="80"/>
+                        <rect key="frame" x="30" y="40" width="80" height="80"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="80" id="6ze-pL-e6i"/>
                             <constraint firstAttribute="height" constant="80" id="v3u-wy-K9v"/>
@@ -27,25 +27,25 @@
                         <state key="normal" image="placeholder-image"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wcl-iz-Y6h">
-                        <rect key="frame" x="135" y="26" width="389" height="24"/>
+                        <rect key="frame" x="125" y="26" width="370" height="24"/>
                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Job Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Nha-l3-T5Y">
-                        <rect key="frame" x="135" y="105" width="409" height="123"/>
+                        <rect key="frame" x="125" y="105" width="390" height="123"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zipcode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7cI-vt-6Sp">
-                        <rect key="frame" x="135" y="70" width="389" height="18"/>
+                        <rect key="frame" x="125" y="70" width="370" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fyE-RS-A6o">
-                        <rect key="frame" x="449" y="70" width="71" height="34"/>
+                        <rect key="frame" x="439" y="70" width="71" height="34"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                         <state key="normal" title="Pending"/>
                         <connections>
@@ -59,13 +59,13 @@
                     <constraint firstItem="7cI-vt-6Sp" firstAttribute="top" secondItem="Wcl-iz-Y6h" secondAttribute="bottom" constant="20" id="7Dw-Gb-2Zk"/>
                     <constraint firstAttribute="trailing" secondItem="GZh-Qh-Qou" secondAttribute="trailing" constant="439" id="Brp-uc-IJv"/>
                     <constraint firstItem="Wcl-iz-Y6h" firstAttribute="leading" secondItem="GZh-Qh-Qou" secondAttribute="trailing" constant="15" id="Dfm-aC-kd7"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="fyE-RS-A6o" secondAttribute="trailing" constant="19" id="GW8-SB-lx9"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="fyE-RS-A6o" secondAttribute="trailing" id="GW8-SB-lx9"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Wcl-iz-Y6h" secondAttribute="trailing" constant="15" id="JyB-lD-6bJ"/>
                     <constraint firstItem="7cI-vt-6Sp" firstAttribute="leading" secondItem="GZh-Qh-Qou" secondAttribute="trailing" constant="15" id="PGb-Ha-vuw"/>
                     <constraint firstAttribute="trailing" secondItem="Nha-l3-T5Y" secondAttribute="trailing" constant="15" id="QdA-FI-4a0"/>
                     <constraint firstItem="Nha-l3-T5Y" firstAttribute="leading" secondItem="GZh-Qh-Qou" secondAttribute="trailing" constant="15" id="Rog-6e-cHU"/>
                     <constraint firstItem="Nha-l3-T5Y" firstAttribute="top" secondItem="Wcl-iz-Y6h" secondAttribute="bottom" multiplier="1.7" constant="20" id="W1r-3R-Pia"/>
-                    <constraint firstItem="GZh-Qh-Qou" firstAttribute="leading" secondItem="Tjg-2m-dqZ" secondAttribute="leading" constant="40" id="WWC-49-HWU"/>
+                    <constraint firstItem="GZh-Qh-Qou" firstAttribute="leading" secondItem="Tjg-2m-dqZ" secondAttribute="leading" constant="30" id="WWC-49-HWU"/>
                     <constraint firstAttribute="bottomMargin" secondItem="Nha-l3-T5Y" secondAttribute="bottom" constant="25" id="Yt0-QS-DDA"/>
                     <constraint firstItem="fyE-RS-A6o" firstAttribute="top" secondItem="Wcl-iz-Y6h" secondAttribute="bottom" constant="20" id="kuS-4y-Pm1"/>
                     <constraint firstItem="Wcl-iz-Y6h" firstAttribute="top" secondItem="Tjg-2m-dqZ" secondAttribute="topMargin" constant="15" id="mVp-9Z-cEp"/>
