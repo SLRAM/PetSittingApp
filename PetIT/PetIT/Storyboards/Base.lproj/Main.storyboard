@@ -472,8 +472,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="SPU-8H-5jg" kind="relationship" relationship="viewControllers" id="gJf-QH-ksq"/>
                         <segue destination="Ece-4O-yUd" kind="relationship" relationship="viewControllers" id="iW6-cm-CbB"/>
+                        <segue destination="SPU-8H-5jg" kind="relationship" relationship="viewControllers" id="gJf-QH-ksq"/>
                         <segue destination="u0A-Jq-rDc" kind="relationship" relationship="viewControllers" id="b4X-dp-EtW"/>
                     </connections>
                 </tabBarController>
