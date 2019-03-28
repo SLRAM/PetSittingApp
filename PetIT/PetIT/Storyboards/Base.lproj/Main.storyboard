@@ -234,7 +234,6 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="editProfile" destination="cfj-r8-aGP" id="2Ai-KJ-f0L"/>
                         <outlet property="firstName" destination="Jp1-9G-iZi" id="YZH-MK-Yao"/>
                         <outlet property="lastName" destination="hWK-aO-K8q" id="l2t-ac-Hat"/>
                         <outlet property="profileImage" destination="jDj-NR-fRb" id="c57-4k-u2q"/>
