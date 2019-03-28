@@ -7,6 +7,9 @@
 //
 
 import Foundation
+import FirebaseFirestore
+import Firebase
+
 struct UsersCollectionKeys {
     static let CollectionKey = "users"
     static let UserIdKey = "userId"

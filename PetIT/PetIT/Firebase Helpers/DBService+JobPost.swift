@@ -6,6 +6,8 @@
 //  Copyright © 2019 Stephanie Ramirez. All rights reserved.
 //
 import Foundation
+import FirebaseFirestore
+import Firebase
 
 struct JobPostCollectionKeys {
     static let CollectionKey = "jobPost"
