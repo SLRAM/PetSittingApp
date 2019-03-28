@@ -112,8 +112,6 @@ class JobListViewController: UIViewController {
                     
             }
             let jobPost = jobPosts[indexPath.row]
-//            postDVC.jobPost = jobPost
-//            postDVC.ID = jobPost.ID
             postDVC.jobPost = jobPost
             
         }
@@ -135,6 +133,9 @@ extension JobListViewController: UITableViewDataSource {
         let distanceInMiles = (coordinate0.distance(from: coordinate1))/1609.344
         let roundedDistance = String(format: "%.2f", distanceInMiles)
         cell.selectionStyle = .none
+        if !jobPost.status.isEmpty {
+            cell.pendingStatus.setTitle(jobPost.status, for: .normal)
+        }
         cell.jobDescription.text = jobPost.jobDescription
         cell.zipcodeLabel.text = "Distance: \(roundedDistance) miles"
         fetchPostCreator(userId: jobPost.ownerId, cell: cell, jobPost: jobPost)
@@ -183,14 +184,14 @@ extension JobListViewController: CLLocationManagerDelegate {
 //        myMapView.setRegion(myCurrentRegion, animated: true)
     }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        //this kicks off whenever the user's location has noticeably changed
         print("user has changed locations")
         guard let currentLocation = locations.last else {return}
         print("The user is in lat: \(currentLocation.coordinate.latitude) and long:\(currentLocation.coordinate.longitude)")
         
         let myCurrentRegion = MKCoordinateRegion(center: currentLocation.coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
         userLocation = currentLocation.coordinate
-        
-//        myMapView.setRegion(myCurrentRegion, animated: true)
     }
+}
+extension JobListViewController: UISearchBarDelegate {
+    
 }
