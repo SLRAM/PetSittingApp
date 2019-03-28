@@ -15,6 +15,7 @@ class AddJobPostViewController: UIViewController {
     @IBOutlet weak var petImage: RoundedButton!
     @IBOutlet weak var jobDescription: UITextView!
     @IBOutlet weak var petBio: UITextView!
+    @IBOutlet weak var zipcodeLabel: UILabel!
     @IBOutlet weak var timeFrame: UITextField!
     @IBOutlet weak var wages: UITextField!
     

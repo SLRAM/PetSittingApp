@@ -10,13 +10,10 @@ import UIKit
 
 class ProfileHeaderView: UIView {
 
-
     @IBOutlet weak var profileImage: CircularButton!
     @IBOutlet weak var fullnameLabel: UILabel!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var ProfilebioTextField: UITextField!
-    
-    
     
     @IBAction func editButtonPressed(_ sender: UIButton) {
     }
