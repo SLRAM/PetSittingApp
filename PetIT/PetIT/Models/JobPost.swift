@@ -13,13 +13,13 @@ struct JobPost {
     let createdDate: String
     let postId: String
     let ownerId: String
-    let sitterId: String
+    let sitterId: String?
     let imageURLString: String
     let jobDescription: String
     let timeFrame: String
     let wage: Double
     
-    init(createdDate: String, postId: String, ownerId: String, sitterId: String, imageURLString: String, jobDescription: String, timeFrame: String, wage: Double) {
+    init(createdDate: String, postId: String, ownerId: String, sitterId: String?, imageURLString: String, jobDescription: String, timeFrame: String, wage: Double) {
         self.createdDate = createdDate
         self.postId = postId
         self.ownerId = ownerId

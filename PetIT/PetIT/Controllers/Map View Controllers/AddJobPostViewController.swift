@@ -39,6 +39,52 @@ class AddJobPostViewController: UIViewController {
     }
     
     @IBAction func postButtonPressed(_ sender: UIBarButtonItem) {
+        guard let postDescription = jobDescription.text,
+            !postDescription.isEmpty,
+            let stringWage = wages.text,
+            let jobWage = Double(stringWage),
+            let jobTimeFrame = timeFrame.text,
+            !jobTimeFrame.isEmpty,
+            let imageData = selectedImage?.jpegData(compressionQuality: 1.0) else {
+                let alertController = UIAlertController(title: "Unable to post. Please fill in the required fields.", message: nil, preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                alertController.addAction(okAction)
+                present(alertController, animated: true)
+                return}
+        guard let user = authservice.getCurrentUser() else {
+            let alertController = UIAlertController(title: "Unable to post. Please login to post.", message: nil, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alertController.addAction(okAction)
+            
+            present(alertController, animated: true)
+            return}
+        let docRef = DBService.firestoreDB
+            .collection(JobPostCollectionKeys.CollectionKey)
+            .document()
+        StorageService.postImage(imageData: imageData, imageName: Constants.PetImagePath + "\(user.uid)/\(docRef.documentID)") { [weak self] (error, imageURL) in
+            if let error = error {
+                print("failed to post image with error: \(error.localizedDescription)")
+            } else if let imageURL = imageURL {
+                print("image posted and recieved imageURL - post blog to database: \(imageURL)")
+                let jobPost = JobPost(createdDate: Date.getISOTimestamp(),
+                                      postId: docRef.documentID,
+                                      ownerId: user.uid,
+                                      sitterId: nil,
+                                      imageURLString: imageURL.absoluteString,
+                                      jobDescription: postDescription,
+                                      timeFrame: jobTimeFrame,
+                                      wage: jobWage)
+                DBService.postJob(jobPost: jobPost, completion: { [weak self] error in
+                    if let error = error {
+                        self?.showAlert(title: "Posting Job Error", message: error.localizedDescription)
+                    } else {
+                        self?.showAlert(title: "Job Posted", message: "This Job will be added to your Job feed.") { action in
+                            self?.dismiss(animated: true)
+                        }
+                    }
+                })
+            }
+        }
     }
     
     @IBAction func petImageButtonPressed(_ sender: RoundedButton) {
