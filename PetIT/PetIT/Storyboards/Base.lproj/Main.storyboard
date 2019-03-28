@@ -465,7 +465,7 @@
         <!--Tab Bar View Controller-->
         <scene sceneID="qw5-h5-vXr">
             <objects>
-                <tabBarController id="bOO-tA-rkC" customClass="TabBarViewController" customModule="PetIT" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarViewController" id="bOO-tA-rkC" customClass="TabBarViewController" customModule="PetIT" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VH9-XI-Ygo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
