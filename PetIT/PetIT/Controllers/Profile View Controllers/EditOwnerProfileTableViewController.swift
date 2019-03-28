@@ -43,7 +43,13 @@ class EditOwnerProfileTableViewController: UITableViewController {
     }
     
     private func updateUI() {
-        
+        if let imageURLString = owner.photoURL {
+            profileImage.kf.setImage(with: URL(string: imageURLString), for: .normal, placeholder: #imageLiteral(resourceName: "placeholder-image.png"))
+        }
+        firstName.text = owner.firstName
+        lastName.text = owner.lastName
+        username.text = owner.displayName
+        userBio.text = owner.bio
     }
     
     @IBAction func profileImageButtonPressed(_ sender: CircularButton) {
