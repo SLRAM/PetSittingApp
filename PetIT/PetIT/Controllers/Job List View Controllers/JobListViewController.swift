@@ -103,8 +103,7 @@ class JobListViewController: UIViewController {
 }
 extension JobListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return jobPosts.count
-        return 1
+        return jobPosts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

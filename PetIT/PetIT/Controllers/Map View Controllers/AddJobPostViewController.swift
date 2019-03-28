@@ -41,6 +41,8 @@ class AddJobPostViewController: UIViewController {
     @IBAction func postButtonPressed(_ sender: UIBarButtonItem) {
         guard let postDescription = jobDescription.text,
             !postDescription.isEmpty,
+            let petDescription = petBio.text,
+            !petDescription.isEmpty,
             let stringWage = wages.text,
             let jobWage = Double(stringWage),
             let jobTimeFrame = timeFrame.text,
@@ -73,7 +75,9 @@ class AddJobPostViewController: UIViewController {
                                       imageURLString: imageURL.absoluteString,
                                       jobDescription: postDescription,
                                       timeFrame: jobTimeFrame,
-                                      wage: jobWage)
+                                      wage: jobWage,
+                                      petBio: petDescription,
+                                      zipcode: 10462)
                 DBService.postJob(jobPost: jobPost, completion: { [weak self] error in
                     if let error = error {
                         self?.showAlert(title: "Posting Job Error", message: error.localizedDescription)
