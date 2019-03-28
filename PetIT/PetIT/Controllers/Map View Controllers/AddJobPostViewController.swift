@@ -106,7 +106,8 @@ class AddJobPostViewController: UIViewController {
                                       wage: jobWage,
                                       petBio: petDescription,
                                       lat: userLat,
-                                      long: userLong)
+                                      long: userLong,
+                                      status: "Pending")
                 DBService.postJob(jobPost: jobPost, completion: { [weak self] error in
                     if let error = error {
                         self?.showAlert(title: "Posting Job Error", message: error.localizedDescription)

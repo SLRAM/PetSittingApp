@@ -23,6 +23,7 @@ struct JobPostCollectionKeys {
 //    static let ZipcodeKey = "zipcode"
     static let LatKey = "lat"
     static let LongKey = "long"
+    static let StatusKey = "status"
 }
 
 extension DBService {
@@ -39,7 +40,9 @@ extension DBService {
                 JobPostCollectionKeys.WageKey               : jobPost.wage,
                 JobPostCollectionKeys.PetBioKey             : jobPost.petBio,
                 JobPostCollectionKeys.LatKey                : jobPost.lat,
-                JobPostCollectionKeys.LongKey               : jobPost.long
+                JobPostCollectionKeys.LongKey               : jobPost.long,
+                JobPostCollectionKeys.StatusKey             : jobPost.status
+                
 //                JobPostCollectionKeys.ZipcodeKey            : jobPost.zipcode
                 ])
             { (error) in
