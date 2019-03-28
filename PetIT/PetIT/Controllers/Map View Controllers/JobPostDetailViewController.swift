@@ -72,6 +72,7 @@ class JobPostDetailViewController: UIViewController {
     }
     
     @IBAction func bookJobButtonPressed(_ sender: UIButton) {
+        
     }
     
 }
