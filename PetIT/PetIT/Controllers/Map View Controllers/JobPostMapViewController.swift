@@ -16,7 +16,8 @@ class JobPostMapViewController: UIViewController {
     
     @IBOutlet weak var mapSearchBar: UISearchBar!
     @IBOutlet weak var jobPostMap: MKMapView!
-    
+    var userLocation = CLLocation()
+
     class MyAnnotation: MKPointAnnotation {
         var tag: Int!
     }
@@ -79,7 +80,26 @@ class JobPostMapViewController: UIViewController {
                         } else if let snapshot = snapshot {
                             
                             self?.jobPosts = snapshot.documents.map { JobPost(dict: $0.data()) }
-                                .sorted { $0.createdDate.date() > $1.createdDate.date() }
+                                .sorted {(firstObject, secondObject) in
+                                    let firstObjectCoordinate = CLLocation(latitude: firstObject.lat, longitude: firstObject.long)
+                                    let userCoordinate = CLLocation(latitude: self!.userLocation.coordinate.latitude, longitude: self!.userLocation.coordinate.longitude)
+                                    let secondObjectCoordinate = CLLocation(latitude: secondObject.lat, longitude: secondObject.long)
+                                    let firstDistance = userCoordinate.distance(from: firstObjectCoordinate)
+                                    let secondDistance = userCoordinate.distance(from: secondObjectCoordinate)
+                                    
+                                    if firstDistance > secondDistance {
+                                        return false
+                                    } else {
+                                        return true
+                                    }
+
+                                    
+                                    
+                                    
+                                    
+
+                            
+                            }
                             self?.setupAnnotations()
 
                         }
@@ -133,7 +153,7 @@ class JobPostMapViewController: UIViewController {
             count += 1
             
         }
-        let jobCoordinate = CLLocationCoordinate2D(latitude: jobPosts[1].lat, longitude: jobPosts[1].long)
+        let jobCoordinate = CLLocationCoordinate2D(latitude: jobPosts[0].lat, longitude: jobPosts[0].long)
         let myCurrentRegion = MKCoordinateRegion(center: jobCoordinate, latitudinalMeters: 9000, longitudinalMeters: 9000)
         jobPostMap.setRegion(myCurrentRegion, animated: true)
         
@@ -162,7 +182,7 @@ extension JobPostMapViewController: CLLocationManagerDelegate {
         print("user has changed locations")
         guard let currentLocation = locations.last else {return}
         print("The user is in lat: \(currentLocation.coordinate.latitude) and long:\(currentLocation.coordinate.longitude)")
-        
+        userLocation = currentLocation
         let myCurrentRegion = MKCoordinateRegion(center: currentLocation.coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
         
         jobPostMap.setRegion(myCurrentRegion, animated: true)
