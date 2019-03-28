@@ -4,6 +4,12 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>NSLocationUsageDescription</key>
+	<string>Please allow PetIT access to your user location.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Please allow PetIT access to your camera in order to update your profile photo.</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Please allow PetIT access for saving photos to your photo library.</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
