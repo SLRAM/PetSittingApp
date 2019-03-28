@@ -135,6 +135,7 @@ extension JobListViewController: UITableViewDataSource {
         cell.selectionStyle = .none
         if !jobPost.status.isEmpty {
             cell.pendingStatus.setTitle(jobPost.status, for: .normal)
+            cell.pendingStatus.setTitleColor(.green, for: .normal)
         }
         cell.jobDescription.text = jobPost.jobDescription
         cell.zipcodeLabel.text = "Distance: \(roundedDistance) miles"

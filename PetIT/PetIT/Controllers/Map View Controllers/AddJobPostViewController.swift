@@ -38,6 +38,8 @@ class AddJobPostViewController: UIViewController {
         jobDescription.layer.cornerRadius = 10.0
         petBio.clipsToBounds = true
         petBio.layer.cornerRadius = 10.0
+        petBio.delegate = self
+        jobDescription.delegate = self
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Show Edit Location" {
@@ -152,9 +154,12 @@ class AddJobPostViewController: UIViewController {
 }
 extension AddJobPostViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.text == "Blog text..." {
-            textView.text = ""
+        if textView.text == Constants.JobDescriptionPlaceholder {
             textView.textColor = .black
+            textView.text = ""
+        } else if textView.text == Constants.PetBioPlaceholder {
+            textView.textColor = .black
+            textView.text = ""
         }
     }
     
@@ -186,3 +191,5 @@ extension AddJobPostViewController: UIImagePickerControllerDelegate, UINavigatio
         dismiss(animated: true)
     }
 }
+
+
