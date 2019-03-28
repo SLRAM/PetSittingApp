@@ -131,7 +131,7 @@ extension JobListViewController: UITableViewDataSource {
         let jobPost = jobPosts[indexPath.row]
         cell.selectionStyle = .none
         cell.jobDescription.text = jobPost.jobDescription
-        cell.zipcodeLabel.text = String(jobPost.zipcode)
+//        cell.zipcodeLabel.text = String(jobPost.zipcode)
 //        cell.blogId = jobPost.documentId
 //        cell.blogDescription.text = jobPost.blogDescription
 //        cell.BloggerImage.kf.indicatorType = .activity
