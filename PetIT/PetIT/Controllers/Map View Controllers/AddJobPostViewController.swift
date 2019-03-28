@@ -123,7 +123,6 @@ class AddJobPostViewController: UIViewController {
     }
     
     @IBAction func petImageButtonPressed(_ sender: RoundedButton) {
-        //camera or library sheet
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let libraryAction = UIAlertAction(title: "Library", style: .default) { [unowned self] (action) in
 
