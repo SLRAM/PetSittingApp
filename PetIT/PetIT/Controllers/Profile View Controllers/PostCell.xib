@@ -27,28 +27,37 @@
                         <state key="normal" image="placeholder-image"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wcl-iz-Y6h">
-                        <rect key="frame" x="135" y="70" width="389" height="24"/>
+                        <rect key="frame" x="135" y="26" width="389" height="24"/>
                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Job Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Nha-l3-T5Y">
-                        <rect key="frame" x="135" y="114" width="409" height="129"/>
+                        <rect key="frame" x="135" y="105" width="409" height="123"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zipcode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7cI-vt-6Sp">
+                        <rect key="frame" x="135" y="70" width="389" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="GZh-Qh-Qou" firstAttribute="top" secondItem="Tjg-2m-dqZ" secondAttribute="top" constant="40" id="1By-ys-eix"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="7cI-vt-6Sp" secondAttribute="trailing" constant="15" id="6UV-Tj-UbH"/>
+                    <constraint firstItem="7cI-vt-6Sp" firstAttribute="top" secondItem="Wcl-iz-Y6h" secondAttribute="bottom" constant="20" id="7Dw-Gb-2Zk"/>
                     <constraint firstAttribute="trailing" secondItem="GZh-Qh-Qou" secondAttribute="trailing" constant="439" id="Brp-uc-IJv"/>
                     <constraint firstItem="Wcl-iz-Y6h" firstAttribute="leading" secondItem="GZh-Qh-Qou" secondAttribute="trailing" constant="15" id="Dfm-aC-kd7"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Wcl-iz-Y6h" secondAttribute="trailing" constant="15" id="JyB-lD-6bJ"/>
+                    <constraint firstItem="7cI-vt-6Sp" firstAttribute="leading" secondItem="GZh-Qh-Qou" secondAttribute="trailing" constant="15" id="PGb-Ha-vuw"/>
                     <constraint firstAttribute="trailing" secondItem="Nha-l3-T5Y" secondAttribute="trailing" constant="15" id="QdA-FI-4a0"/>
                     <constraint firstItem="Nha-l3-T5Y" firstAttribute="leading" secondItem="GZh-Qh-Qou" secondAttribute="trailing" constant="15" id="Rog-6e-cHU"/>
-                    <constraint firstItem="Nha-l3-T5Y" firstAttribute="top" secondItem="Wcl-iz-Y6h" secondAttribute="bottom" constant="20" id="W1r-3R-Pia"/>
+                    <constraint firstItem="Nha-l3-T5Y" firstAttribute="top" secondItem="Wcl-iz-Y6h" secondAttribute="bottom" multiplier="1.7" constant="20" id="W1r-3R-Pia"/>
                     <constraint firstItem="GZh-Qh-Qou" firstAttribute="leading" secondItem="Tjg-2m-dqZ" secondAttribute="leading" constant="40" id="WWC-49-HWU"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="Nha-l3-T5Y" secondAttribute="bottom" constant="-24" id="Yt0-QS-DDA"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Nha-l3-T5Y" secondAttribute="bottom" constant="25" id="Yt0-QS-DDA"/>
                     <constraint firstItem="Wcl-iz-Y6h" firstAttribute="top" secondItem="Tjg-2m-dqZ" secondAttribute="topMargin" constant="15" id="mVp-9Z-cEp"/>
                 </constraints>
             </tableViewCellContentView>
@@ -56,6 +65,7 @@
                 <outlet property="jobDescription" destination="Nha-l3-T5Y" id="HWC-Te-BzH"/>
                 <outlet property="profileImage" destination="GZh-Qh-Qou" id="hgo-Kn-AZx"/>
                 <outlet property="usernameLabel" destination="Wcl-iz-Y6h" id="zvY-9G-blQ"/>
+                <outlet property="zipcodeLabel" destination="7cI-vt-6Sp" id="dTK-O9-1td"/>
             </connections>
             <point key="canvasLocation" x="234.05797101449278" y="131.25"/>
         </tableViewCell>

@@ -12,6 +12,7 @@ class PostCell: UITableViewCell {
 
     @IBOutlet weak var profileImage: CircularButton!
     @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var zipcodeLabel: UILabel!
     @IBOutlet weak var jobDescription: UITextView!
     
     override func awakeFromNib() {
