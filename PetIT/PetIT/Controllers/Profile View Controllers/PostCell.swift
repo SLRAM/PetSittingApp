@@ -11,6 +11,7 @@ import UIKit
 class PostCell: UITableViewCell {
 
     @IBOutlet weak var profileImage: CircularButton!
+    @IBOutlet weak var pendingStatus: UIButton!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var zipcodeLabel: UILabel!
     @IBOutlet weak var jobDescription: UITextView!
@@ -22,7 +23,10 @@ class PostCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
     }
 
+    @IBAction func jobStatusChangeButton(_ sender: UIButton) {
+    }
+    
+    
 }
