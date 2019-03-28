@@ -34,8 +34,6 @@ class AddJobPostViewController: UIViewController {
     private var authservice = AppDelegate.authservice
     override func viewDidLoad() {
         super.viewDidLoad()
-//        configureTextView()
-
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Show Edit Location" {
