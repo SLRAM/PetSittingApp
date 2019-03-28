@@ -10,10 +10,23 @@ import UIKit
 
 class CreateAccountViewController: UIViewController {
 
+    
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
+    
+    @IBAction func createAccountButtonPressed(_ sender: UIButton) {
+    }
+    
+    
+    @IBAction func showLoginView(_ sender: UIButton) {
+    }
+    
     
 
 }

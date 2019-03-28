@@ -13,11 +13,25 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    
+    static var authservice = AuthService()
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        if let _ = AppDelegate.authservice.getCurrentUser() {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let postTabBarViewController = storyboard.instantiateViewController(withIdentifier: "TabBarViewController") as! UITabBarController
+            window?.rootViewController = postTabBarViewController
+        } else {
+            let storyboard = UIStoryboard(name: "LoginView", bundle: nil)
+            let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+            window?.rootViewController = UINavigationController(rootViewController: loginViewController)
+        }
+        window?.makeKeyAndVisible()
+        
         return true
     }
 
