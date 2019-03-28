@@ -13,13 +13,15 @@ struct JobPost {
     let createdDate: String
     let postId: String
     let ownerId: String
-    let sitterId: String
+    let sitterId: String?
     let imageURLString: String
     let jobDescription: String
+    let petBio: String
     let timeFrame: String
     let wage: Double
+    let zipcode: Int
     
-    init(createdDate: String, postId: String, ownerId: String, sitterId: String, imageURLString: String, jobDescription: String, timeFrame: String, wage: Double) {
+    init(createdDate: String, postId: String, ownerId: String, sitterId: String?, imageURLString: String, jobDescription: String, timeFrame: String, wage: Double, petBio: String, zipcode: Int) {
         self.createdDate = createdDate
         self.postId = postId
         self.ownerId = ownerId
@@ -28,6 +30,8 @@ struct JobPost {
         self.jobDescription = jobDescription
         self.timeFrame = timeFrame
         self.wage = wage
+        self.petBio = petBio
+        self.zipcode = zipcode
     }
     
     init(dict: [String: Any]) {
@@ -39,5 +43,7 @@ struct JobPost {
         self.jobDescription = dict[JobPostCollectionKeys.JobDescriptionKey] as? String ?? ""
         self.timeFrame =  dict[JobPostCollectionKeys.TimeFrameKey] as? String ?? ""
         self.wage = dict[JobPostCollectionKeys.WageKey] as? Double ?? 0
+        self.petBio = dict[JobPostCollectionKeys.PetBioKey] as? String ?? ""
+        self.zipcode = dict[JobPostCollectionKeys.ZipcodeKey] as? Int ?? 0
     }
 }
