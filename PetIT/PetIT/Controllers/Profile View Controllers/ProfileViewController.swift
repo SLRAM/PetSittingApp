@@ -122,6 +122,14 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         cell.jobDescription.text = currentJobPost.jobDescription
         cell.usernameLabel.text = owner?.displayName
         cell.profileImage.kf.setImage(with: URL(string: currentJobPost.imageURLString), for: .normal, placeholder: #imageLiteral(resourceName: "placeholder-image.png"))
+        if currentJobPost.status == "PENDING" {
+            cell.pendingStatus.setTitle(currentJobPost.status, for: .normal)
+            cell.pendingStatus.setTitleColor(.red, for: .normal)
+        } else {
+            cell.pendingStatus.setTitle("BOOKED", for: .normal)
+            cell.pendingStatus.setTitleColor(.green, for: .normal)
+        }
+        
         return cell
     }
     

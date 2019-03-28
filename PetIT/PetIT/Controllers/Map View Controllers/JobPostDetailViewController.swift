@@ -42,9 +42,6 @@ class JobPostDetailViewController: UIViewController {
         jobDescription.layer.cornerRadius = 10.0
         petBio.clipsToBounds = true
         petBio.layer.cornerRadius = 10.0
-        
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -65,12 +62,17 @@ class JobPostDetailViewController: UIViewController {
         jobWages.text = jobPost.wage
         fullnameLabel.text = userModel!.firstName
         usernameLable.text = "@" + (userModel!.displayName)
-        if !jobPost.status.isEmpty {
+        
+        if jobPost.status == "PENDING" {
+            bookJobButton.setTitle("Book Job", for: .normal)
+            bookJobButton.setTitleColor(.red, for: .normal)
+            bookJobButton.isEnabled = true
+        } else {
             bookJobButton.setTitle("BOOKED", for: .normal)
             bookJobButton.setTitleColor(.green, for: .normal)
             bookJobButton.isEnabled = false
         }
-}
+    }
     
     private func updateUserImageAndUsername() {
         DBService.fetchUser(userId: jobPost.ownerId) { [weak self] (error, user) in
@@ -92,9 +94,8 @@ class JobPostDetailViewController: UIViewController {
             ]) { [weak self] (error) in
                 if let error = error {
                     self?.showAlert(title: "Editing Error", message: error.localizedDescription)
-                }
+            }
         }
     }
-    
 }
 

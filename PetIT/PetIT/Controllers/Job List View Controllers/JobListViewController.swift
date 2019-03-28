@@ -133,8 +133,11 @@ extension JobListViewController: UITableViewDataSource {
         let distanceInMiles = (coordinate0.distance(from: coordinate1))/1609.344
         let roundedDistance = String(format: "%.2f", distanceInMiles)
         cell.selectionStyle = .none
-        if !jobPost.status.isEmpty {
+        if jobPost.status == "PENDING" {
             cell.pendingStatus.setTitle(jobPost.status, for: .normal)
+            cell.pendingStatus.setTitleColor(.red, for: .normal)
+        } else {
+            cell.pendingStatus.setTitle("BOOKED", for: .normal)
             cell.pendingStatus.setTitleColor(.green, for: .normal)
         }
         cell.jobDescription.text = jobPost.jobDescription
