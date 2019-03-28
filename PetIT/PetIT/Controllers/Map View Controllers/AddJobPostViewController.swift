@@ -34,8 +34,6 @@ class AddJobPostViewController: UIViewController {
     private var authservice = AppDelegate.authservice
     override func viewDidLoad() {
         super.viewDidLoad()
-//        configureTextView()
-
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Show Edit Location" {
@@ -73,8 +71,8 @@ class AddJobPostViewController: UIViewController {
             !postDescription.isEmpty,
             let petDescription = petBio.text,
             !petDescription.isEmpty,
-            let stringWage = wages.text,
-            let jobWage = Double(stringWage),
+            let jobWage = wages.text,
+            !jobWage.isEmpty,
             let jobTimeFrame = timeFrame.text,
             !jobTimeFrame.isEmpty,
             let imageData = selectedImage?.jpegData(compressionQuality: 1.0) else {
@@ -123,7 +121,6 @@ class AddJobPostViewController: UIViewController {
     }
     
     @IBAction func petImageButtonPressed(_ sender: RoundedButton) {
-        //camera or library sheet
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let libraryAction = UIAlertAction(title: "Library", style: .default) { [unowned self] (action) in
 
