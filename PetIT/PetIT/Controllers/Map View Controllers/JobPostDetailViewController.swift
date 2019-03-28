@@ -43,6 +43,8 @@ class JobPostDetailViewController: UIViewController {
         petBio.clipsToBounds = true
         petBio.layer.cornerRadius = 10.0
         
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -63,6 +65,11 @@ class JobPostDetailViewController: UIViewController {
         jobWages.text = jobPost.wage
         fullnameLabel.text = userModel!.firstName
         usernameLable.text = "@" + (userModel!.displayName)
+        if !jobPost.status.isEmpty {
+            bookJobButton.setTitle("BOOKED", for: .normal)
+            bookJobButton.setTitleColor(.green, for: .normal)
+            bookJobButton.isEnabled = false
+        }
 }
     
     private func updateUserImageAndUsername() {
@@ -90,3 +97,4 @@ class JobPostDetailViewController: UIViewController {
     }
     
 }
+

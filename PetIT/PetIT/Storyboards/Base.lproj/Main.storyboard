@@ -542,13 +542,13 @@
                                     <action selector="petImageButtonPressed:" destination="eJf-iK-EXA" eventType="touchUpInside" id="mTC-9f-emW"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Job Description" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="WvG-fe-V0H">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Set Tasks..." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="WvG-fe-V0H">
                                 <rect key="frame" x="16" y="386.66666666666669" width="168" height="202.33333333333331"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Pet Bio" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fGu-us-y7k">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Tell me about your pets..." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fGu-us-y7k">
                                 <rect key="frame" x="192" y="386.66666666666669" width="167" height="202.33333333333331"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
