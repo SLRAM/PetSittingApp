@@ -20,7 +20,9 @@ struct JobPostCollectionKeys {
     static let TimeFrameKey = "timeFrame"
     static let WageKey = "wage"
     static let PetBioKey = "petBio"
-    static let ZipcodeKey = "zipcode"
+//    static let ZipcodeKey = "zipcode"
+    static let LatKey = "lat"
+    static let LongKey = "long"
 }
 
 extension DBService {
@@ -36,7 +38,9 @@ extension DBService {
                 JobPostCollectionKeys.TimeFrameKey          : jobPost.timeFrame,
                 JobPostCollectionKeys.WageKey               : jobPost.wage,
                 JobPostCollectionKeys.PetBioKey             : jobPost.petBio,
-                JobPostCollectionKeys.ZipcodeKey            : jobPost.zipcode
+                JobPostCollectionKeys.LatKey                : jobPost.lat,
+                JobPostCollectionKeys.LongKey               : jobPost.long
+//                JobPostCollectionKeys.ZipcodeKey            : jobPost.zipcode
                 ])
             { (error) in
                 if let error = error {

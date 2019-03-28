@@ -9,14 +9,19 @@
 import UIKit
 import Kingfisher
 import Toucan
+import CoreLocation
+import MapKit
 
 class AddJobPostViewController: UIViewController {
 
+    @IBOutlet weak var locationButton: UIButton!
     @IBOutlet weak var petImage: RoundedButton!
     @IBOutlet weak var jobDescription: UITextView!
     @IBOutlet weak var petBio: UITextView!
     @IBOutlet weak var timeFrame: UITextField!
     @IBOutlet weak var wages: UITextField!
+    
+    private var userLocation = CLLocationCoordinate2D()
     
     
     private lazy var imagePickerController: UIImagePickerController = {
@@ -32,6 +37,23 @@ class AddJobPostViewController: UIViewController {
 //        configureTextView()
 
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "Show Edit Location" {
+            guard let mapDVC = segue.destination as? AddLocationViewController else {
+                fatalError("cannot segue to bioDVC")
+                
+            }
+//            bioDVC.userBio = userBio
+        }
+    }
+    
+    @IBAction func unwindFromEditLocation(segue: UIStoryboardSegue) {
+        let mapVC = segue.source as! AddLocationViewController
+        userLocation = mapVC.center
+        print("users location is")
+        print(userLocation)
+        locationButton.setTitle("Location Added", for: .normal)
+    }
  
     
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
@@ -39,6 +61,14 @@ class AddJobPostViewController: UIViewController {
     }
     
     @IBAction func postButtonPressed(_ sender: UIBarButtonItem) {
+        let userLat = userLocation.latitude
+        let userLong = userLocation.longitude
+        if locationButton.titleLabel?.text != "Location Added" {
+            let alertController = UIAlertController(title: "Unable to post. Choose a location.", message: nil, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alertController.addAction(okAction)
+            present(alertController, animated: true)
+            return}
         guard let postDescription = jobDescription.text,
             !postDescription.isEmpty,
             let petDescription = petBio.text,
@@ -77,7 +107,8 @@ class AddJobPostViewController: UIViewController {
                                       timeFrame: jobTimeFrame,
                                       wage: jobWage,
                                       petBio: petDescription,
-                                      zipcode: 10462)
+                                      lat: userLat,
+                                      long: userLong)
                 DBService.postJob(jobPost: jobPost, completion: { [weak self] error in
                     if let error = error {
                         self?.showAlert(title: "Posting Job Error", message: error.localizedDescription)
