@@ -13,5 +13,5 @@ struct Constants {
     static let BioDescriptionPlaceholder = "Tell me about yourself..."
     static let PetImagePath = "blogImages/"
     static let ProfileImagePath = "profileImages/"
-    static let SitterCellHeight: CGFloat = 300.0
+    static let SitterCellHeight: CGFloat = 150.0
 }

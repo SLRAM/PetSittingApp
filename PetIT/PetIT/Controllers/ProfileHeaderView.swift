@@ -13,6 +13,7 @@ protocol ProfileHeaderViewDelegate: AnyObject {
     func willEditProfile(profileHeaderView: ProfileHeaderView)
 }
 
+
 class ProfileHeaderView: UIView {
 
     @IBOutlet var contentView: UIView!
