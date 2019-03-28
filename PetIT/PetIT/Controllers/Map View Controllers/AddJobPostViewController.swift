@@ -110,7 +110,6 @@ class AddJobPostViewController: UIViewController {
                 fatalError("cannot segue to bioDVC")
                 
             }
-//            bioDVC.userBio = userBio
         }
     }
     
