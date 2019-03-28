@@ -98,7 +98,7 @@ class ProfileViewController: UIViewController {
                     fatalError("Cannot Segue to JobPostDetailVC")
             }
             let selectedJobPost = jobPosts[indexPath.row]
-            // TODO: Set the detail job post here
+            jobPostDetailVC.jobPost = selectedJobPost
         } else if segue.identifier == "Segue to EditOwnerProfile" {
             guard let navController = segue.destination as? UINavigationController,
                 let editOwnerProfileVC = navController.viewControllers.first as? EditOwnerProfileTableViewController else {
