@@ -34,6 +34,10 @@ class AddJobPostViewController: UIViewController {
     private var authservice = AppDelegate.authservice
     override func viewDidLoad() {
         super.viewDidLoad()
+        jobDescription.clipsToBounds = true
+        jobDescription.layer.cornerRadius = 10.0
+        petBio.clipsToBounds = true
+        petBio.layer.cornerRadius = 10.0
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Show Edit Location" {
