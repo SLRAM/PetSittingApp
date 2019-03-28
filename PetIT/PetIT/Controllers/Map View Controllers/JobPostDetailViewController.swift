@@ -48,7 +48,7 @@ class JobPostDetailViewController: UIViewController {
 }
     
     private func updateUserImageAndUsername() {
-        DBService.fetchUser(userId: userModel.userId) { [weak self] (error, user) in
+        DBService.fetchUser(userId: jobPosts.ownerId) { [weak self] (error, user) in
             if let error = error {
                 self?.showAlert(title: "Error getting username", message: error.localizedDescription)
             } else if let user = user {
