@@ -8,10 +8,12 @@
 
 import UIKit
 import Firebase
+import CoreLocation
 
 class ProfileViewController: UIViewController {
     
     @IBOutlet weak var profileTableView: UITableView!
+    var userLocation = CLLocationCoordinate2D()
     
     private lazy var profileHeaderView: ProfileHeaderView = {
         let headerView = ProfileHeaderView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 450))
@@ -121,6 +123,14 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         let currentJobPost = jobPosts[indexPath.row]
         cell.jobDescription.text = currentJobPost.jobDescription
         cell.usernameLabel.text = owner?.displayName
+        
+        let coordinate0 = CLLocation(latitude: userLocation.latitude, longitude: userLocation.longitude)
+        let coordinate1 = CLLocation(latitude: currentJobPost.lat, longitude: currentJobPost.long)
+        let distanceInMiles = (coordinate0.distance(from: coordinate1))/1609.344
+        let roundedDistance = String(format: "%.2f", distanceInMiles)
+        cell.selectionStyle = .none
+        cell.zipcodeLabel.text = "Distance: \(roundedDistance) miles"
+        
         cell.profileImage.kf.setImage(with: URL(string: currentJobPost.imageURLString), for: .normal, placeholder: #imageLiteral(resourceName: "placeholder-image.png"))
         if currentJobPost.status == "PENDING" {
             cell.pendingStatus.setTitle(currentJobPost.status, for: .normal)
