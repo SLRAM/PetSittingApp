@@ -20,6 +20,7 @@ class JobPostDetailViewController: UIViewController {
     @IBOutlet weak var petBio: UITextView!
     @IBOutlet weak var jobTimeFrame: UITextField!
     @IBOutlet weak var jobWages: UITextField!
+    @IBOutlet weak var bookJobButton: UIButton!
     
     public var userModel: UserModel? {
         didSet {
@@ -71,7 +72,8 @@ class JobPostDetailViewController: UIViewController {
     }
     
     @IBAction func bookJobButtonPressed(_ sender: UIButton) {
-        
+        sender.setTitle("Task Accepted", for: .normal)
+        showAlert(title: "Job Booked", message: "Thank You for booking with us!")
     }
     
 }

@@ -407,7 +407,7 @@
                                 <rect key="frame" x="16" y="637" width="343" height="37"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <state key="normal" title="Book Job">
-                                    <color key="titleColor" red="1" green="0.29296431610000001" blue="0.0092988573929999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleColor" red="1" green="0.5136020443" blue="0.14840380819999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
                                     <action selector="bookJobButtonPressed:" destination="QZN-Ly-XEg" eventType="touchUpInside" id="eEE-Ic-5N8"/>
@@ -451,6 +451,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Job Post" id="wbX-ba-fza"/>
                     <connections>
+                        <outlet property="bookJobButton" destination="jQR-Rw-G8d" id="DMO-VZ-D1v"/>
                         <outlet property="fullnameLabel" destination="DvQ-Ma-ITB" id="ofs-P1-5LW"/>
                         <outlet property="jobDescription" destination="FGT-Oh-mrx" id="kwu-8Q-c2X"/>
                         <outlet property="jobTimeFrame" destination="Tz2-Qy-k2Y" id="GY9-3J-CX1"/>
