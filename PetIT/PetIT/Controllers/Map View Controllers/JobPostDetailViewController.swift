@@ -47,10 +47,18 @@ class JobPostDetailViewController: UIViewController {
     
     
     private func updateUI() {
+        if let photoURL = self.userModel?.photoURL, !photoURL.isEmpty {
+            petOwnerProfileImage.kf.setImage(with: URL(string: photoURL), placeholder: #imageLiteral(resourceName: "create_new"))
+        }
+        if let imageURL = userModel?.petPhotoURL {
+            petImage.kf.setImage(with: URL(string: imageURL), placeholder: #imageLiteral(resourceName: "placeholder-image.png"))
+        }
         jobDescription.text = jobPost.jobDescription
-        petBio.text = userModel!.petBio
+        petBio.text = userModel?.petBio
         jobTimeFrame.text = jobPost.timeFrame
         jobWages.text = String(jobPost.wage)
+        fullnameLabel.text = userModel!.firstName
+        usernameLable.text = "@" + (userModel!.displayName)
 }
     
     private func updateUserImageAndUsername() {
@@ -59,14 +67,6 @@ class JobPostDetailViewController: UIViewController {
                 self?.showAlert(title: "Error getting username", message: error.localizedDescription)
             } else if let user = user {
                 self?.userModel = user
-                self?.fullnameLabel.text = user.firstName
-                self?.usernameLable.text = "@" + (user.displayName)
-                if let imageURL = user.petPhotoURL {
-                    self?.petImage.kf.setImage(with: URL(string: imageURL), placeholder: #imageLiteral(resourceName: "placeholder-image.png"))
-                }
-                if let photoURL = self?.userModel?.photoURL, !photoURL.isEmpty {
-                    self?.petOwnerProfileImage.kf.setImage(with: URL(string: photoURL), placeholder: #imageLiteral(resourceName: "create_new"))
-                }
             }
         }
     }
