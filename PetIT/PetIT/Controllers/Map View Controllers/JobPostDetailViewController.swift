@@ -43,6 +43,8 @@ class JobPostDetailViewController: UIViewController {
         petBio.clipsToBounds = true
         petBio.layer.cornerRadius = 10.0
         
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -81,3 +83,4 @@ class JobPostDetailViewController: UIViewController {
     }
     
 }
+
