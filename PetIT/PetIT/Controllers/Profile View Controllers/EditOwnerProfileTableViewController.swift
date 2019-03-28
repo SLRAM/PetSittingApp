@@ -17,6 +17,7 @@ class EditOwnerProfileTableViewController: UITableViewController {
     @IBOutlet weak var lastName: UITextField!
     @IBOutlet weak var username: UITextField!
     @IBOutlet weak var userBio: UITextField!
+    public var owner: UserModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,12 +32,15 @@ class EditOwnerProfileTableViewController: UITableViewController {
     }
     
     @IBAction func profileImageButtonPressed(_ sender: CircularButton) {
+        
     }
     
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
+        
     }
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
+        
     }
     
     
