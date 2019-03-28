@@ -110,14 +110,15 @@ extension JobListViewController: UITableViewDataSource {
         guard let cell = jobListTableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as? PostCell else {
             fatalError("PostCell not found")
         }
-//        let jobPost = jobPosts[indexPath.row]
+        let jobPost = jobPosts[indexPath.row]
         cell.selectionStyle = .none
+        cell.jobDescription.text = jobPost.jobDescription
 //        cell.blogId = jobPost.documentId
 //        cell.blogDescription.text = jobPost.blogDescription
 //        cell.BloggerImage.kf.indicatorType = .activity
 //        cell.blogImage.kf.indicatorType = .activity
 //        cell.blogImage.kf.setImage(with: URL(string: jobPost.imageURL), placeholder: #imageLiteral(resourceName: "placeholder-image.png"))
-//        fetchPostCreator(userId: jobPost.usersID, cell: cell, jobPost: jobPost)
+        fetchPostCreator(userId: jobPost.ownerId, cell: cell, jobPost: jobPost)
         return cell
     }
     
@@ -127,6 +128,7 @@ extension JobListViewController: UITableViewDataSource {
                 print("failed to fetch blog creator with error: \(error.localizedDescription)")
             } else if let postCreator = postCreator {
                 guard let userPhoto = postCreator.photoURL else {return}
+                cell.usernameLabel.text = postCreator.displayName
 //                cell.profileImage.kf.setImage(with: URL(string: userPhoto), placeholder: #imageLiteral(resourceName: "placeholder-image.png"))
             }
         }
