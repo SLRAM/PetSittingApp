@@ -113,6 +113,7 @@ extension JobListViewController: UITableViewDataSource {
         let jobPost = jobPosts[indexPath.row]
         cell.selectionStyle = .none
         cell.jobDescription.text = jobPost.jobDescription
+        cell.zipcodeLabel.text = String(jobPost.zipcode)
 //        cell.blogId = jobPost.documentId
 //        cell.blogDescription.text = jobPost.blogDescription
 //        cell.BloggerImage.kf.indicatorType = .activity
@@ -129,7 +130,7 @@ extension JobListViewController: UITableViewDataSource {
             } else if let postCreator = postCreator {
                 guard let userPhoto = postCreator.photoURL else {return}
                 cell.usernameLabel.text = postCreator.displayName
-//                cell.profileImage.kf.setImage(with: URL(string: userPhoto), placeholder: #imageLiteral(resourceName: "placeholder-image.png"))
+                cell.profileImage.kf.setImage(with: URL(string: userPhoto) ,for: .normal, placeholder: #imageLiteral(resourceName: "placeholder-image.png"))
             }
         }
         
