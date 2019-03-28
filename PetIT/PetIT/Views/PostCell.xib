@@ -45,9 +45,11 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fyE-RS-A6o">
-                        <rect key="frame" x="468" y="26.5" width="71" height="34"/>
+                        <rect key="frame" x="458" y="26.5" width="81" height="34"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                        <state key="normal" title="Pending"/>
+                        <state key="normal" title="PENDING">
+                            <color key="titleColor" red="1" green="0.29296431610000001" blue="0.0092988573929999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </state>
                         <connections>
                             <action selector="jobStatusChangeButton:" destination="pP5-ks-XZA" eventType="touchUpInside" id="ryZ-f8-xdV"/>
                         </connections>

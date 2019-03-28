@@ -20,6 +20,7 @@ class JobPostDetailViewController: UIViewController {
     @IBOutlet weak var petBio: UITextView!
     @IBOutlet weak var jobTimeFrame: UITextField!
     @IBOutlet weak var jobWages: UITextField!
+    @IBOutlet weak var bookJobButton: UIButton!
     
     public var userModel: UserModel? {
         didSet {
@@ -37,6 +38,10 @@ class JobPostDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateUserImageAndUsername()
+        jobDescription.clipsToBounds = true
+        jobDescription.layer.cornerRadius = 10.0
+        petBio.clipsToBounds = true
+        petBio.layer.cornerRadius = 10.0
         
     }
     
@@ -71,7 +76,8 @@ class JobPostDetailViewController: UIViewController {
     }
     
     @IBAction func bookJobButtonPressed(_ sender: UIButton) {
-        
+        sender.setTitle("Job Accepted", for: .normal)
+        showAlert(title: "Job Booked", message: "Thank You for booking with us!")
     }
     
 }
