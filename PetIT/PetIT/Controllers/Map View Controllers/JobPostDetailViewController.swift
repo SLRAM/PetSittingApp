@@ -80,6 +80,15 @@ class JobPostDetailViewController: UIViewController {
     @IBAction func bookJobButtonPressed(_ sender: UIButton) {
         sender.setTitle("Job Accepted", for: .normal)
         showAlert(title: "Job Booked", message: "Thank You for booking with us!")
+        DBService.firestoreDB
+            .collection(JobPostCollectionKeys.CollectionKey)
+            .document(jobPost.postId)
+            .updateData([JobPostCollectionKeys.StatusKey : "BOOKED"
+            ]) { [weak self] (error) in
+                if let error = error {
+                    self?.showAlert(title: "Editing Error", message: error.localizedDescription)
+                }
+        }
     }
     
 }
