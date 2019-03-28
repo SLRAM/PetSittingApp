@@ -13,7 +13,7 @@
         <!--Login View Controller-->
         <scene sceneID="uNh-hY-GfV">
             <objects>
-                <viewController id="Mw5-3H-1R5" customClass="LoginViewController" customModule="PetIT" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="Mw5-3H-1R5" customClass="LoginViewController" customModule="PetIT" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hbO-hp-8Wg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -89,7 +89,7 @@
         <!--Create Account View Controller-->
         <scene sceneID="NDo-l0-WoL">
             <objects>
-                <viewController id="f3u-Qp-eCn" customClass="CreateAccountViewController" customModule="PetIT" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateAccountViewController" id="f3u-Qp-eCn" customClass="CreateAccountViewController" customModule="PetIT" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hMK-Po-0c1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
