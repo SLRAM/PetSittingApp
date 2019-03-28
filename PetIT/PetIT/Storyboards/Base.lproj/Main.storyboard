@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bOO-tA-rkC">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -333,7 +333,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="X9V-HX-ArH"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Yhx-Un-LC7"/>
+                    <navigationItem key="navigationItem" id="Yhx-Un-LC7">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="25b-45-i8j">
+                            <connections>
+                                <segue destination="T7n-by-pf7" kind="presentation" id="wTA-fl-X4j"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="jobListSearchBar" destination="rk4-ma-T6N" id="Gza-Sb-lFx"/>
                         <outlet property="jobListTableView" destination="vrN-IW-0FS" id="0gV-hQ-0J4"/>
@@ -465,15 +471,15 @@
         <!--Tab Bar View Controller-->
         <scene sceneID="qw5-h5-vXr">
             <objects>
-                <tabBarController id="bOO-tA-rkC" customClass="TabBarViewController" customModule="PetIT" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarViewController" id="bOO-tA-rkC" customClass="TabBarViewController" customModule="PetIT" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VH9-XI-Ygo">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="SPU-8H-5jg" kind="relationship" relationship="viewControllers" id="gJf-QH-ksq"/>
                         <segue destination="Ece-4O-yUd" kind="relationship" relationship="viewControllers" id="iW6-cm-CbB"/>
+                        <segue destination="SPU-8H-5jg" kind="relationship" relationship="viewControllers" id="gJf-QH-ksq"/>
                         <segue destination="u0A-Jq-rDc" kind="relationship" relationship="viewControllers" id="b4X-dp-EtW"/>
                     </connections>
                 </tabBarController>
@@ -669,7 +675,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gG3-Ta-ic0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1904.8" y="-890.39408866995075"/>
+            <point key="canvasLocation" x="2042" y="-890"/>
         </scene>
         <!--Job List-->
         <scene sceneID="1d3-ak-geD">
@@ -698,6 +704,7 @@
         <image name="user_male" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="wTA-fl-X4j"/>
         <segue reference="E9B-qO-2hT"/>
     </inferredMetricsTieBreakers>
 </document>
