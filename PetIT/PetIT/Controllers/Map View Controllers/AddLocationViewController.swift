@@ -44,6 +44,8 @@ class AddLocationViewController: UIViewController {
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         //pass center to location
+        performSegue(withIdentifier: "Unwind From Edit Location", sender: self)
+
     }
 
     

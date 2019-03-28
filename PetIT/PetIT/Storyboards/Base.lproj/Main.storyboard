@@ -623,6 +623,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="jobDescription" destination="WvG-fe-V0H" id="qNW-Ht-mAu"/>
+                        <outlet property="locationButton" destination="xJa-VK-tYj" id="jCj-yu-VM8"/>
                         <outlet property="petBio" destination="fGu-us-y7k" id="tPN-mc-4Wy"/>
                         <outlet property="petImage" destination="mdd-AI-ZCd" id="Fl5-N3-OzJ"/>
                         <outlet property="timeFrame" destination="TSV-ll-CyV" id="U34-sK-Xwn"/>
@@ -673,9 +674,11 @@
                     <connections>
                         <outlet property="myMapView" destination="bp0-zP-7bO" id="wya-ES-tQo"/>
                         <outlet property="saveButton" destination="3ck-6P-Dck" id="30i-W2-GPD"/>
+                        <segue destination="bTw-ga-goA" kind="unwind" identifier="Unwind From Edit Location" unwindAction="unwindFromEditLocationWithSegue:" id="OiO-ZM-jVO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M38-yJ-Bvc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="bTw-ga-goA" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3766" y="-890"/>
         </scene>
