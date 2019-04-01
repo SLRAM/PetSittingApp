@@ -37,6 +37,10 @@ class JobPostDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        jobDescription.isEditable = false
+        petBio.isEditable = false
+        jobTimeFrame.isUserInteractionEnabled = false
+        jobWages.isUserInteractionEnabled = false
         updateUserImageAndUsername()
         jobDescription.clipsToBounds = true
         jobDescription.layer.cornerRadius = 10.0
