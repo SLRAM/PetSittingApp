@@ -11,10 +11,9 @@ The purpose of PetIT is to lessen the burden of trying to find care for your pet
 ![JobBooking](https://github.com/SLRAM/PetSittingApp/blob/master/PetIT/Images/BookedJob.gif)
 
 ![JobPostOne](https://github.com/SLRAM/PetSittingApp/blob/master/PetIT/Images/JobPostOne.gif)
-
 ![JobPostTwo](https://github.com/SLRAM/PetSittingApp/blob/master/PetIT/Images/JobPostTwo.gif)
+
 ![ProfileView](https://github.com/SLRAM/PetSittingApp/blob/master/PetIT/Images/ProfileView.gif)
-![____](____.gif)
 
 ## Built With
 * UIKit
