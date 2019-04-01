@@ -5,13 +5,17 @@ The user will be able to create an account and post pet sitting jobs. The job po
 
 The purpose of PetIT is to lessen the burden of trying to find care for your pets. Sometimes pet owners are unable to travel with their pets and need a trustworthy place to obtain care. No matter how big or small the task may be, PetIt will allow pet owners the opportunity to find appropriate care for their pets.
 
+## Job List
 ![JobList](https://github.com/SLRAM/PetSittingApp/blob/master/PetIT/Images/JobList.gif)
 
+## Booking A Job
 ![JobBooking](https://github.com/SLRAM/PetSittingApp/blob/master/PetIT/Images/BookedJob.gif)
 
+## Posting A Job
 ![JobPostOne](https://github.com/SLRAM/PetSittingApp/blob/master/PetIT/Images/JobPostOne.gif)
 ![JobPostTwo](https://github.com/SLRAM/PetSittingApp/blob/master/PetIT/Images/JobPostTwo.gif)
 
+## User Profile
 ![ProfileView](https://github.com/SLRAM/PetSittingApp/blob/master/PetIT/Images/ProfileView.gif)
 
 ## Built With
