@@ -54,11 +54,9 @@ class JobListViewController: UIViewController {
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
             locationManager.startUpdatingLocation()
-//            myMapView.showsUserLocation = true
         } else {
             locationManager.requestWhenInUseAuthorization()
             locationManager.startUpdatingLocation()
-//            myMapView.showsUserLocation = true
         }
         
         jobListTableView.dataSource = self
