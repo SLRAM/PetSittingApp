@@ -186,6 +186,7 @@ extension JobPostMapViewController: CLLocationManagerDelegate {
         let myCurrentRegion = MKCoordinateRegion(center: currentLocation.coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
         
         jobPostMap.setRegion(myCurrentRegion, animated: true)
+        locationManager.stopUpdatingLocation()
     }
 }
 extension JobPostMapViewController: MKMapViewDelegate {

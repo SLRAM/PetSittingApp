@@ -71,6 +71,8 @@ extension AddLocationViewController: CLLocationManagerDelegate {
         let myCurrentRegion = MKCoordinateRegion(center: currentLocation.coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
         
         myMapView.setRegion(myCurrentRegion, animated: true)
+        locationManager.stopUpdatingLocation()
+
     }
     
 }
