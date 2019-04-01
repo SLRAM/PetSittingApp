@@ -20,6 +20,7 @@ class JobPostDetailViewController: UIViewController {
     @IBOutlet weak var petBio: UITextView!
     @IBOutlet weak var jobTimeFrame: UITextField!
     @IBOutlet weak var jobWages: UITextField!
+    @IBOutlet weak var bookJobButton: UIButton!
     
     public var userModel: UserModel? {
         didSet {
@@ -36,8 +37,15 @@ class JobPostDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        updateUserImageAndUsername()
-        
+        jobDescription.isEditable = false
+        petBio.isEditable = false
+        jobTimeFrame.isUserInteractionEnabled = false
+        jobWages.isUserInteractionEnabled = false
+        updateUserImageAndUsername()
+        jobDescription.clipsToBounds = true
+        jobDescription.layer.cornerRadius = 10.0
+        petBio.clipsToBounds = true
+        petBio.layer.cornerRadius = 10.0
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,11 +55,28 @@ class JobPostDetailViewController: UIViewController {
     
     
     private func updateUI() {
+        if let photoURL = self.userModel?.photoURL, !photoURL.isEmpty {
+            petOwnerProfileImage.kf.setImage(with: URL(string: photoURL), placeholder: #imageLiteral(resourceName: "create_new"))
+        }
+        petImage.kf.setImage(with: URL(string: jobPost.imageURLString), placeholder: #imageLiteral(resourceName: "placeholder-image.png"))
+        
         jobDescription.text = jobPost.jobDescription
-        petBio.text = userModel!.petBio
+        petBio.text = jobPost.petBio
         jobTimeFrame.text = jobPost.timeFrame
-        jobWages.text = String(jobPost.wage)
-}
+        jobWages.text = jobPost.wage
+        fullnameLabel.text = userModel!.firstName
+        usernameLable.text = "@" + (userModel!.displayName)
+        
+        if jobPost.status == "PENDING" {
+            bookJobButton.setTitle("Book Job", for: .normal)
+            bookJobButton.setTitleColor(.red, for: .normal)
+            bookJobButton.isEnabled = true
+        } else {
+            bookJobButton.setTitle("BOOKED", for: .normal)
+            bookJobButton.setTitleColor(.green, for: .normal)
+            bookJobButton.isEnabled = false
+        }
+    }
     
     private func updateUserImageAndUsername() {
         DBService.fetchUser(userId: jobPost.ownerId) { [weak self] (error, user) in
@@ -59,20 +84,22 @@ class JobPostDetailViewController: UIViewController {
                 self?.showAlert(title: "Error getting username", message: error.localizedDescription)
             } else if let user = user {
                 self?.userModel = user
-                self?.fullnameLabel.text = user.firstName
-                self?.usernameLable.text = "@" + (user.displayName)
-                if let imageURL = user.petPhotoURL {
-                    self?.petImage.kf.setImage(with: URL(string: imageURL), placeholder: #imageLiteral(resourceName: "placeholder-image.png"))
-                }
-                if let photoURL = self?.userModel?.photoURL, !photoURL.isEmpty {
-                    self?.petOwnerProfileImage.kf.setImage(with: URL(string: photoURL), placeholder: #imageLiteral(resourceName: "create_new"))
-                }
             }
         }
     }
     
     @IBAction func bookJobButtonPressed(_ sender: UIButton) {
-        
+        sender.setTitle("Job Accepted", for: .normal)
+        showAlert(title: "Job Booked", message: "Thank You for booking with us!")
+        DBService.firestoreDB
+            .collection(JobPostCollectionKeys.CollectionKey)
+            .document(jobPost.postId)
+            .updateData([JobPostCollectionKeys.StatusKey : "BOOKED"
+            ]) { [weak self] (error) in
+                if let error = error {
+                    self?.showAlert(title: "Editing Error", message: error.localizedDescription)
+            }
+        }
     }
-    
 }
+

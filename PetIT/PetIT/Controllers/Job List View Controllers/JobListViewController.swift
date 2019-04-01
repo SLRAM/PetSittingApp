@@ -18,6 +18,7 @@ class JobListViewController: UIViewController {
     @IBOutlet weak var jobListTableView: UITableView!
     
     let locationManager = CLLocationManager()
+    var userLocation = CLLocationCoordinate2D()
 
     
     private var jobPosts = [JobPost]() {
@@ -53,11 +54,9 @@ class JobListViewController: UIViewController {
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
             locationManager.desiredAccuracy = kCLLocationAccuracyBest
             locationManager.startUpdatingLocation()
-//            myMapView.showsUserLocation = true
         } else {
             locationManager.requestWhenInUseAuthorization()
             locationManager.startUpdatingLocation()
-//            myMapView.showsUserLocation = true
         }
         
         jobListTableView.dataSource = self
@@ -111,8 +110,6 @@ class JobListViewController: UIViewController {
                     
             }
             let jobPost = jobPosts[indexPath.row]
-//            postDVC.jobPost = jobPost
-//            postDVC.ID = jobPost.ID
             postDVC.jobPost = jobPost
             
         }
@@ -129,14 +126,20 @@ extension JobListViewController: UITableViewDataSource {
             fatalError("PostCell not found")
         }
         let jobPost = jobPosts[indexPath.row]
+        let coordinate0 = CLLocation(latitude: userLocation.latitude, longitude: userLocation.longitude)
+        let coordinate1 = CLLocation(latitude: jobPost.lat, longitude: jobPost.long)
+        let distanceInMiles = (coordinate0.distance(from: coordinate1))/1609.344
+        let roundedDistance = String(format: "%.2f", distanceInMiles)
         cell.selectionStyle = .none
+        if jobPost.status == "PENDING" {
+            cell.pendingStatus.setTitle(jobPost.status, for: .normal)
+            cell.pendingStatus.setTitleColor(.red, for: .normal)
+        } else {
+            cell.pendingStatus.setTitle("BOOKED", for: .normal)
+            cell.pendingStatus.setTitleColor(.green, for: .normal)
+        }
         cell.jobDescription.text = jobPost.jobDescription
-//        cell.zipcodeLabel.text = String(jobPost.zipcode)
-//        cell.blogId = jobPost.documentId
-//        cell.blogDescription.text = jobPost.blogDescription
-//        cell.BloggerImage.kf.indicatorType = .activity
-//        cell.blogImage.kf.indicatorType = .activity
-//        cell.blogImage.kf.setImage(with: URL(string: jobPost.imageURL), placeholder: #imageLiteral(resourceName: "placeholder-image.png"))
+        cell.zipcodeLabel.text = "Distance: \(roundedDistance) miles"
         fetchPostCreator(userId: jobPost.ownerId, cell: cell, jobPost: jobPost)
         return cell
     }
@@ -183,13 +186,14 @@ extension JobListViewController: CLLocationManagerDelegate {
 //        myMapView.setRegion(myCurrentRegion, animated: true)
     }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        //this kicks off whenever the user's location has noticeably changed
         print("user has changed locations")
         guard let currentLocation = locations.last else {return}
         print("The user is in lat: \(currentLocation.coordinate.latitude) and long:\(currentLocation.coordinate.longitude)")
         
         let myCurrentRegion = MKCoordinateRegion(center: currentLocation.coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
-        
-//        myMapView.setRegion(myCurrentRegion, animated: true)
+        userLocation = currentLocation.coordinate
     }
+}
+extension JobListViewController: UISearchBarDelegate {
+    
 }

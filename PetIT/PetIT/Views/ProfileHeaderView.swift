@@ -39,6 +39,7 @@ class ProfileHeaderView: UIView {
         Bundle.main.loadNibNamed("ProfileHeaderView", owner: self, options: nil)
         addSubview(contentView)
         contentView.frame = bounds
+        ProfilebioTextField.isUserInteractionEnabled = false
     }
     
     @IBAction func editButtonPressed(_ sender: UIButton) {

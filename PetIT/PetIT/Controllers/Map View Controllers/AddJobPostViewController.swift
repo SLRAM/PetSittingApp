@@ -20,6 +20,7 @@ class AddJobPostViewController: UIViewController {
     @IBOutlet weak var petBio: UITextView!
     @IBOutlet weak var timeFrame: UITextField!
     @IBOutlet weak var wages: UITextField!
+    var isTextView = true
     
     private var userLocation = CLLocationCoordinate2D()
     
@@ -34,16 +35,81 @@ class AddJobPostViewController: UIViewController {
     private var authservice = AppDelegate.authservice
     override func viewDidLoad() {
         super.viewDidLoad()
-//        configureTextView()
+        jobDescription.clipsToBounds = true
+        jobDescription.layer.cornerRadius = 10.0
+        petBio.clipsToBounds = true
+        petBio.layer.cornerRadius = 10.0
+        petBio.delegate = self
+        jobDescription.delegate = self
+        configureTextView()
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        registerKeyboardNotifications()
+    }
+    
+    private func registerKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(willShowKeyboard), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(willHideKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    private func unregisterKeyboardNofications() {
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        unregisterKeyboardNofications()
+    }
+    
+    deinit {
+    }
+    
+    private func configureTextView() {
+        wages.delegate = self
+        timeFrame.delegate = self
+        jobDescription.delegate = self
+        petBio.delegate = self
 
     }
+    
+    @objc private func willShowKeyboard(notification: Notification) {
+        
+        guard let info = notification.userInfo,
+            let keyboardFrame = info["UIKeyboardFrameEndUserInfoKey"] as? CGRect else {
+                print("userinfo is nil")
+                return
+        }
+        if isTextView {
+            return
+        }else {
+            timeFrame.transform = CGAffineTransform(translationX: 0, y: -keyboardFrame.height)
+            wages.transform = CGAffineTransform(translationX: 0, y: -keyboardFrame.height)
+        }
+        
+
+    }
+    
+    @objc private func willHideKeyboard(notification: Notification) {
+        if isTextView {
+            return
+        }else{
+            timeFrame.transform = CGAffineTransform.identity
+            wages.transform = CGAffineTransform.identity
+        }
+
+    }
+
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Show Edit Location" {
             guard let mapDVC = segue.destination as? AddLocationViewController else {
                 fatalError("cannot segue to bioDVC")
                 
             }
-//            bioDVC.userBio = userBio
         }
     }
     
@@ -73,8 +139,8 @@ class AddJobPostViewController: UIViewController {
             !postDescription.isEmpty,
             let petDescription = petBio.text,
             !petDescription.isEmpty,
-            let stringWage = wages.text,
-            let jobWage = Double(stringWage),
+            let jobWage = wages.text,
+            !jobWage.isEmpty,
             let jobTimeFrame = timeFrame.text,
             !jobTimeFrame.isEmpty,
             let imageData = selectedImage?.jpegData(compressionQuality: 1.0) else {
@@ -108,7 +174,8 @@ class AddJobPostViewController: UIViewController {
                                       wage: jobWage,
                                       petBio: petDescription,
                                       lat: userLat,
-                                      long: userLong)
+                                      long: userLong,
+                                      status: "PENDING")
                 DBService.postJob(jobPost: jobPost, completion: { [weak self] error in
                     if let error = error {
                         self?.showAlert(title: "Posting Job Error", message: error.localizedDescription)
@@ -123,7 +190,6 @@ class AddJobPostViewController: UIViewController {
     }
     
     @IBAction func petImageButtonPressed(_ sender: RoundedButton) {
-        //camera or library sheet
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let libraryAction = UIAlertAction(title: "Library", style: .default) { [unowned self] (action) in
 
@@ -150,9 +216,17 @@ class AddJobPostViewController: UIViewController {
 }
 extension AddJobPostViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
-        if textView.text == "Blog text..." {
-            textView.text = ""
+        isTextView = true
+        
+        
+        
+        
+        if textView.text == Constants.JobDescriptionPlaceholder {
             textView.textColor = .black
+            textView.text = ""
+        } else if textView.text == Constants.PetBioPlaceholder {
+            textView.textColor = .black
+            textView.text = ""
         }
     }
     
@@ -163,6 +237,7 @@ extension AddJobPostViewController: UITextViewDelegate {
                 textView.textColor = .gray
             }
             textView.resignFirstResponder()
+            isTextView = true
             return false
         }
         return true
@@ -184,3 +259,18 @@ extension AddJobPostViewController: UIImagePickerControllerDelegate, UINavigatio
         dismiss(animated: true)
     }
 }
+
+extension AddJobPostViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        isTextView = true
+        return true
+    }
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        isTextView = false
+    }
+
+}
+
+
+
