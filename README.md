@@ -24,8 +24,8 @@ The purpose of PetIT is to lessen the burden of trying to find care for your pet
 * Kingfisher 
 
 ## Prerequisites
-* Xcode - 9.0+, set up on Swift Language
-* iOS 8.0+ / Mac OS X 10.11+ / tvOS 9.0+
+* Xcode - 10.0+, set up on Swift Language
+* iOS 8.0+
 * Swift 4.0+
 
 ## Group Members
