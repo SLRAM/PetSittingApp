@@ -1,4 +1,7 @@
 # PetSittingApp
+<p align="center">
+  <img src="https://github.com/SLRAM/PetSittingApp/blob/master/PetIT/Images/PetIt_Logo.png" />
+</p>
 
 ## App Overview
 The user will be able to create an account and post pet sitting jobs. The job posts require a general location, a job description, a pet description, time frame, and a wage. The wage can either be monetary or free room and board at their home. Once a job is posted it will be visible on a list or on a map. It will appear as pending until a sitter books the job. The user can also view all their posts on their profile.
