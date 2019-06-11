@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="264" id="pP5-ks-XZA" customClass="PostCell" customModule="PetIT" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="559" height="264"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pP5-ks-XZA" id="Tjg-2m-dqZ">
+                <rect key="frame" x="0.0" y="0.0" width="559" height="263.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZh-Qh-Qou" customClass="CircularButton" customModule="PetIT" customModuleProvider="target">
+                        <rect key="frame" x="20" y="12" width="80" height="80"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="80" id="6Ok-Dn-ezP"/>
+                            <constraint firstAttribute="width" constant="80" id="8zJ-hI-hBJ"/>
+                        </constraints>
+                        <state key="normal" image="placeholder-image"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wcl-iz-Y6h">
+                        <rect key="frame" x="115" y="15" width="79.5" height="19.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                        <color key="textColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Job Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Nha-l3-T5Y">
+                        <rect key="frame" x="115" y="68.5" width="424" height="159.5"/>
+                        <color key="backgroundColor" red="0.99607843137254903" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="textColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zipcode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7cI-vt-6Sp">
+                        <rect key="frame" x="115" y="42.5" width="56.5" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.58081901069999997" green="0.088427625600000004" blue="0.31863921880000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fyE-RS-A6o">
+                        <rect key="frame" x="458" y="26.5" width="81" height="34"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                        <state key="normal" title="PENDING">
+                            <color key="titleColor" red="1" green="0.29296431610000001" blue="0.0092988573929999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </state>
+                        <connections>
+                            <action selector="jobStatusChangeButton:" destination="pP5-ks-XZA" eventType="touchUpInside" id="ryZ-f8-xdV"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <color key="backgroundColor" red="0.99607843137254903" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                <constraints>
+                    <constraint firstItem="Nha-l3-T5Y" firstAttribute="leading" secondItem="GZh-Qh-Qou" secondAttribute="trailing" constant="15" id="0gs-m7-Xlm"/>
+                    <constraint firstAttribute="trailing" secondItem="fyE-RS-A6o" secondAttribute="trailing" constant="20" id="2a7-TF-TEr"/>
+                    <constraint firstItem="GZh-Qh-Qou" firstAttribute="leading" secondItem="Tjg-2m-dqZ" secondAttribute="leading" constant="20" id="5Zu-J7-sQj"/>
+                    <constraint firstItem="7cI-vt-6Sp" firstAttribute="top" secondItem="Wcl-iz-Y6h" secondAttribute="bottom" constant="8" id="DOR-YU-fpO"/>
+                    <constraint firstItem="Wcl-iz-Y6h" firstAttribute="leading" secondItem="GZh-Qh-Qou" secondAttribute="trailing" constant="15" id="Rjl-zw-Oml"/>
+                    <constraint firstItem="Wcl-iz-Y6h" firstAttribute="top" secondItem="Tjg-2m-dqZ" secondAttribute="top" constant="15" id="SZH-i3-ZHM"/>
+                    <constraint firstItem="fyE-RS-A6o" firstAttribute="bottom" secondItem="7cI-vt-6Sp" secondAttribute="bottom" id="ihv-ew-dg3"/>
+                    <constraint firstItem="7cI-vt-6Sp" firstAttribute="leading" secondItem="GZh-Qh-Qou" secondAttribute="trailing" constant="15" id="mkN-NG-BLn"/>
+                    <constraint firstItem="GZh-Qh-Qou" firstAttribute="top" secondItem="Tjg-2m-dqZ" secondAttribute="top" constant="12" id="nwH-G7-rgg"/>
+                    <constraint firstItem="Nha-l3-T5Y" firstAttribute="top" secondItem="7cI-vt-6Sp" secondAttribute="bottom" constant="8" id="ugq-Lb-L6q"/>
+                    <constraint firstAttribute="trailing" secondItem="Nha-l3-T5Y" secondAttribute="trailing" constant="20" id="vjA-zQ-xQT"/>
+                    <constraint firstAttribute="bottom" secondItem="Nha-l3-T5Y" secondAttribute="bottom" constant="35.5" id="yuF-e2-Plt"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="jobDescription" destination="Nha-l3-T5Y" id="HWC-Te-BzH"/>
+                <outlet property="pendingStatus" destination="fyE-RS-A6o" id="iaB-h7-bT2"/>
+                <outlet property="profileImage" destination="GZh-Qh-Qou" id="hgo-Kn-AZx"/>
+                <outlet property="usernameLabel" destination="Wcl-iz-Y6h" id="zvY-9G-blQ"/>
+                <outlet property="zipcodeLabel" destination="7cI-vt-6Sp" id="dTK-O9-1td"/>
+            </connections>
+            <point key="canvasLocation" x="234.05797101449278" y="131.25"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="placeholder-image" width="512" height="512"/>
+    </resources>
+</document>
