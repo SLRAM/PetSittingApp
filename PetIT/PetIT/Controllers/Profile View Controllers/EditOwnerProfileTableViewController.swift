@@ -78,6 +78,7 @@ class EditOwnerProfileTableViewController: UITableViewController {
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         navigationItem.rightBarButtonItem?.isEnabled = false
+        
         guard let imageData = selectedImage?.jpegData(compressionQuality: 1.0),
             let user = authservice.getCurrentUser(),
             let displayName = username.text, !displayName.isEmpty,
